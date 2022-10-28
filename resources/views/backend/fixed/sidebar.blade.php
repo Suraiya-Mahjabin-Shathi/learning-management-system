@@ -33,23 +33,28 @@
                     Content
                 </a>
                 
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ url('/quizzes') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-pen-to-square"></i></div>
                     Quizzes
                 </a>
 
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ url('/feedback') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-message"></i></div>
                     Feedback
                 </a>
 
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ url('/certificate') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-certificate"></i></div>
                     Certificates
                 </a>
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ url('/payment') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-money-check-dollar"></i></div>
                     Payment
+                </a>
+
+                <a class="nav-link" href="{{ url('/settings') }}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-money-check-dollar"></i></div>
+                    Settings
                 </a>
 
             </div>
