@@ -4,7 +4,6 @@
 
 
 <h1>Instructor list</h1>
-JHKddbkhdvndfbnvnbdfvbndn 
 
 
 

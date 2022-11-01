@@ -18,7 +18,10 @@ use App\Http\Controllers\CertificateController;
 Route::get('/', [HomeController::class, 'Dashboard']);
 Route::get('/Categories', [CategoryController::class, 'list']);
 Route::get('/instructor', [InstructorController::class, 'list']);
+
 Route::get('/learner', [LearnerController::class, 'list']);
+Route::get('/learner/create', [LearnerController::class, 'create']);
+
 Route::get('/courses', [CourseController::class, 'list']);
 Route::get('/content', [ContentController::class, 'list']);
 Route::get('/quizzes', [QuizController::class, 'list']);

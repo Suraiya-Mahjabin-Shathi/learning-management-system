@@ -59,6 +59,7 @@
 
             </div>
         </div>
+        
         <div class="sb-sidenav-footer">
            
     </nav>
