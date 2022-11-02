@@ -15,10 +15,14 @@ return new class extends Migration
     {
         Schema::create('learners', function (Blueprint $table) {
             $table->id();
-            $table ->string( column: 'name', length: '50');
-            $table ->string( column: 'email', length: '50');
-            $table->text( column: 'address')->nullable();
-            $table->string( column: 'mobile', length: '20');
+            $table->string('name', 200);
+            $table->text('password');
+            $table->text('image', )->nullable();
+            $table->text('dob');
+            $table->string('email', 200);
+            $table->text('Mobile');
+            $table->string('gender',100);
+            $table->text('mark');
             $table->timestamps();
         });
     }

@@ -21,6 +21,7 @@ Route::get('/instructor', [InstructorController::class, 'list']);
 
 Route::get('/learner', [LearnerController::class, 'list']);
 Route::get('/learner/create', [LearnerController::class, 'create']);
+Route::post('/learner/store', [LearnerController::class, 'store']);
 
 Route::get('/courses', [CourseController::class, 'list']);
 Route::get('/content', [ContentController::class, 'list']);

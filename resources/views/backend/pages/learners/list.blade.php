@@ -12,6 +12,9 @@
   <a href="{{ url('/learner/create') }}" class="btn btn-primary" >Create New Learner</a>
   
 
+
+  
+
     <h2>Learner List</h2>
     <p>Here is the table-                              </p>            
     <table class="table table-striped">
