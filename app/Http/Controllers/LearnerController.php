@@ -9,7 +9,12 @@ use App\Models\Learner;
 class LearnerController extends Controller
 {
     public function list(){
-        return view('backend.pages.learners.list');
+
+        $learn=Learner::all();
+        //dd($learn);
+        
+
+        return view('backend.pages.learners.list', compact('learn'));
     }
     
     public function create(){
@@ -22,11 +27,11 @@ class LearnerController extends Controller
             'name'=>$request->name,
             'password'=>$request->password,
             'image'=>$request->image,
-            'dob'=>$request->Birthdate,
+            'dob'=>$request->Birth_date,
             'email'=>$request->email,
-            'Mobile'=>$request->Mobilenumber,
+            'Mobile'=>$request->Mobile_number,
             'gender'=>$request->Gender,
-            'mark'=>$request->Exammark
+            'mark'=>$request->Exam_mark
 
 
         ]);

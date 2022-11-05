@@ -5,49 +5,54 @@
 
 
 
-
 <div class="container mt-3">
  
     <h1>This is Learner list.</h1>
-  <a href="{{ url('/learner/create') }}" class="btn btn-primary" >Create New Learner</a>
+  <a href="{{ url('/learner/create') }}" class="btn btn-success" >Create New Learner</a>
   
 
-
-  
-
-    <h2>Learner List</h2>
-    <p>Here is the table-                              </p>            
-    <table class="table table-striped">
+    <h2>Learner List</h2>           
+    <table class="table">
+      
       <thead>
         <tr>
-          <th>Firstname</th>
-          <th>Lastname</th>
-          <th>Email</th>
+          <th scope="col">ID</th>
+          <th scope="col">Learner_Name</th>
+          <th scope="col">Mobile</th>
+          <th scope="col">Email</th>
+          <th scope="col">Image</th>
+          <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
+
+
+     @foreach($learn as $data)
         <tr>
-          <td>John</td>
-          <td>Doe</td>
-          <td>john@example.com</td>
+          <th scope="row">{{$data->id}}</th>
+
+          <td>{{$data->name}}</td>
+          <td>{{$data->Mobile}}</td>
+          <td>{{$data->email}}</td>
+
+          <td>
+            <img src="{{$data->image}}" alt="image">
+          </td>
+          <td>
+            <a href="" class="btn btn-primary">View</a>
+            <a href="" class="btn btn-success">Update</a>
+            <a href="" class="btn btn-danger">Delete</a>
+
+          </td>          
         </tr>
-        <tr>
-          <td>Mary</td>
-          <td>Moe</td>
-          <td>mary@example.com</td>
-        </tr>
-        <tr>
-          <td>July</td>
-          <td>Dooley</td>
-          <td>july@example.com</td>
-        </tr>
+        
+       @endforeach
       </tbody>
     </table>
   </div>
   
   </body>
   </html>
-
 
 
 @endsection
