@@ -2,6 +2,8 @@
 
 @section('content')
 
+
+
 <div class="container mt-3">
 
   <h1>This is Category List</h1>

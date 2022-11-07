@@ -11,7 +11,9 @@
   <a href="{{ url('/learner/create') }}" class="btn btn-success" >Create New Learner</a>
   
 
-    <h2>Learner List</h2>           
+    <h2>Learner List</h2> 
+    
+    
     <table class="table">
       
       <thead>
@@ -24,9 +26,11 @@
           <th scope="col">Action</th>
         </tr>
       </thead>
+
+
       <tbody>
 
-
+        
      @foreach($learn as $data)
         <tr>
           <th scope="row">{{$data->id}}</th>

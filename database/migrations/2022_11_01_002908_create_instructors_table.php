@@ -16,9 +16,11 @@ return new class extends Migration
         Schema::create('instructors', function (Blueprint $table) {
             $table->id();
             $table ->string( column: 'name', length: '50');
-            $table ->string( column: 'email', length: '50');
-            $table->text( column: 'address')->nullable();
+            $table ->string( column: 'address', length: '50');
+            $table->text( column: 'image')->nullable();
+            $table->text( column: 'e-mail');
             $table->string( column: 'mobile', length: '20');
+            $table->text( column: 'date_of_birth');
             $table->timestamps();
         });
     }

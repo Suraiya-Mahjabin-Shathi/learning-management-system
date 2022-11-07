@@ -31,8 +31,7 @@ class LearnerController extends Controller
             'email'=>$request->email,
             'Mobile'=>$request->Mobile_number,
             'gender'=>$request->Gender,
-            'mark'=>$request->Exam_mark
-
+            'mark'=>$request->mark,
 
         ]);
     }
