@@ -5,6 +5,14 @@
 <h4>New Learner Create</h4>
 
 <form action="{{ url('/learner/store') }} " method="post">
+
+     @if ($errors->any())
+        @foreach ($errors->all() as $message )
+        <p class="alert alert-danger">{{ $message }}</p>  
+        @endforeach
+         
+     @endif
+    
     @csrf
 
     <div style="padding: 20px">    
@@ -15,7 +23,7 @@
     </div>
     <div> 
         <label for="">Enter Learner Password:</label><br>
-        <input type="text" name="password" >
+        <input type="password" name="password" >
     </div>
     <div> 
         <label for="">Enter Address:</label><br>

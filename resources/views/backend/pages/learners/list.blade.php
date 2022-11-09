@@ -53,6 +53,10 @@
        @endforeach
       </tbody>
     </table>
+
+    {{ $learn->links() }}
+
+
   </div>
   
   </body>

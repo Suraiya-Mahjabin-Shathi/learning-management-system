@@ -10,7 +10,7 @@ class LearnerController extends Controller
 {
     public function list(){
 
-        $learn=Learner::all();
+        $learn=Learner::paginate(5);
         //dd($learn);
         
 
@@ -22,6 +22,21 @@ class LearnerController extends Controller
     }
 
     public function store(REQUEST $request){
+
+        $request->validate([
+
+            'name'=>'required|unique:learners,name',
+            'password'=>'required',
+            'address'=>'required',
+            'email'=>'required',
+            'Mobile_number'=>'required',
+            'Birth_date'=>'required',
+            'Gender'=>'required',
+            'mark'=>'required'
+
+
+        ]);
+
         //dd($request->all());
         Learner::create([
             'name'=>$request->name,
