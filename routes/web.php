@@ -25,7 +25,7 @@ Route::get('/instructor', [InstructorController::class, 'list']);
 Route::get('/instructor/create', [InstructorController::class, 'create']);
 Route::post('/instructor/store',[InstructorController::class, 'store']);
 
-Route::get('/learner', [LearnerController::class, 'list']);
+Route::get('/learner', [LearnerController::class, 'list'])git ;
 Route::get('/learner/create', [LearnerController::class, 'create']);
 Route::post('/learner/store', [LearnerController::class, 'store']);
 

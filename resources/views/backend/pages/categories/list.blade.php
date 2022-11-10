@@ -50,6 +50,8 @@
 
     </tbody>
   </table>
+
+  {{ $cats->links() }}
 </div>
 
 </body>

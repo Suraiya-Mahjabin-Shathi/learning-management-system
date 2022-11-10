@@ -15,6 +15,7 @@ class LearnerController extends Controller
         
 
         return view('backend.pages.learners.list', compact('learn'));
+        
     }
     
     public function create(){
@@ -22,7 +23,7 @@ class LearnerController extends Controller
     }
 
     public function store(REQUEST $request){
-
+// dd($request->all());
         $request->validate([
 
             'name'=>'required|unique:learners,name',
@@ -33,15 +34,22 @@ class LearnerController extends Controller
             'Birth_date'=>'required',
             'Gender'=>'required',
             'mark'=>'required'
-
-
         ]);
 
-        //dd($request->all());
+        $fileName=null;
+        if($request->hasFile('image'))
+        {
+            // generate name
+            $fileName=date('Ymdhmi').'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->storeAs('/uploads',$fileName);
+        }
+
+
+        // dd($request->all());
         Learner::create([
             'name'=>$request->name,
             'password'=>$request->password,
-            'image'=>$request->image,
+            'image'=>$fileName,
             'dob'=>$request->Birth_date,
             'email'=>$request->email,
             'Mobile'=>$request->Mobile_number,

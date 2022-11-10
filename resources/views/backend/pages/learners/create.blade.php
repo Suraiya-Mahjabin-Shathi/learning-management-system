@@ -4,9 +4,10 @@
 
 <h4>New Learner Create</h4>
 
-<form action="{{ url('/learner/store') }} " method="post">
 
-     @if ($errors->any())
+  <form action="{{ url('/learner/store')  }}" method="post" enctype="multipart/form-data">
+   
+    @if ($errors->any())
         @foreach ($errors->all() as $message )
         <p class="alert alert-danger">{{ $message }}</p>  
         @endforeach
@@ -23,7 +24,7 @@
     </div>
     <div> 
         <label for="">Enter Learner Password:</label><br>
-        <input type="password" name="password" >
+        <input required type="password" name="password" >
     </div>
     <div> 
         <label for="">Enter Address:</label><br>
@@ -61,7 +62,6 @@
     <div> 
        <button class="btn btn-primary">Submit</button>
     </div>
-
 
 
 </form>

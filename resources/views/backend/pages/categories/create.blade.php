@@ -5,6 +5,7 @@
 <h3>Here is the Category Form:- </h3>
 
     <form action="{{url('Categories/store') }} " method="post">
+        
     
         @csrf
 

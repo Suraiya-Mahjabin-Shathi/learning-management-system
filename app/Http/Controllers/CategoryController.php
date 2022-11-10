@@ -9,7 +9,7 @@ use Illuminate\Database\Console\Migrations\StatusCommand;
 class CategoryController extends Controller
 {
     public function list(){
-        $cats=Category::all();
+        $cats=Category::paginate(5);
 
         //dd($cats);
         return view('backend.pages.categories.list', compact('cats'));

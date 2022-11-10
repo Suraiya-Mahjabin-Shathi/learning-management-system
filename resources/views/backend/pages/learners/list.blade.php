@@ -40,7 +40,7 @@
           <td>{{$data->email}}</td>
 
           <td>
-            <img src="{{$data->image}}" alt="image">
+            <img width="100px" style="border-radius: 10px" src="{{url('/uploads/'.$data->image)}}" alt="image">
           </td>
           <td>
             <a href="" class="btn btn-primary">View</a>
