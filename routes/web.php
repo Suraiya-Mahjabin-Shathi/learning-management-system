@@ -12,10 +12,20 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\InstructorController;
 use App\Http\Controllers\CertificateController;
+use App\Http\Controllers\FrontendHomeController;
 
 
 
-Route::get('/', [HomeController::class, 'Dashboard']);
+
+//for website
+
+Route::get('/', [FrontendHomeController::class,'home']) -> name('home');
+
+
+
+
+
+Route::get('/dashboard', [HomeController::class, 'Dashboard'])->name('dashboard');
 
 Route::get('/Categories', [CategoryController::class, 'list']);
 Route::get('/Categories/create', [CategoryController::class, 'create']);
@@ -25,7 +35,7 @@ Route::get('/instructor', [InstructorController::class, 'list']);
 Route::get('/instructor/create', [InstructorController::class, 'create']);
 Route::post('/instructor/store',[InstructorController::class, 'store']);
 
-Route::get('/learner', [LearnerController::class, 'list'])git ;
+Route::get('/learner', [LearnerController::class, 'list']);
 Route::get('/learner/create', [LearnerController::class, 'create']);
 Route::post('/learner/store', [LearnerController::class, 'store']);
 
