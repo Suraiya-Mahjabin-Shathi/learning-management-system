@@ -17,6 +17,7 @@ class CategoryController extends Controller
 
     public function create(){
         return view('backend.pages.categories.create');
+
     }
 
     public function store(REQUEST $request){
@@ -30,6 +31,8 @@ class CategoryController extends Controller
            'image'=>$request->image,
            'description'=>$request->description
         ]);
+
+        return redirect()->back();
         
     }
 }
