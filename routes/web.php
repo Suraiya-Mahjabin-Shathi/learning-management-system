@@ -16,11 +16,9 @@ use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\FrontendHomeController;
 
 
-
 //for website
 
 Route::get('/', [FrontendHomeController::class,'home']) -> name('home');
-
 
 
 
@@ -28,15 +26,19 @@ Route::get('/', [FrontendHomeController::class,'home']) -> name('home');
 
 Route::get('/login',[UserController::class,'login'])->name('login');
 Route::post('/do-login',[UserController::class,'doLogin'])->name('do.login');
-Route::get('/logout',[UserController::class,'logout'])->name('logout');
 
 Route::group(['middleware'=>'auth'],function(){
 
-Route::get('/', [HomeController::class, 'Dashboard'])->middleware('auth')->name('dashboard');
+Route::get('/logout',[UserController::class,'logout'])->name('logout');
 
+Route::get('/', [HomeController::class, 'Dashboard'])->middleware('auth')->name('dashboard');
 Route::get('/Categories', [CategoryController::class, 'list']);
 Route::get('/Categories/create', [CategoryController::class, 'create']);
 Route::post('/Categories/store', [CategoryController::class, 'store']);
+
+Route::get('/Categories/delete/{category_id}',[CategoryController::class,'deleteCategory'])->name('admin.categories.delete');
+Route::get('/Categories/view/{category_id}',[CategoryController::class,'viewCategory'])->name('admin.categories.view');
+
 Route::get('/instructor', [InstructorController::class, 'list']);
 Route::get('/instructor/create', [InstructorController::class, 'create']);
 Route::post('/instructor/store',[InstructorController::class, 'store']);

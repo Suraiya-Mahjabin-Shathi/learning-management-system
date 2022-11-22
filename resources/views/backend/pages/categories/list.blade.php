@@ -8,6 +8,16 @@
 
   <h1>This is Category List</h1>
 
+
+  @if(session()->has('message'))
+        <p class="alert alert-success">{{session()->get('message')}}</p>
+      @endif
+
+    @if(session()->has('error'))
+        <p class="alert alert-danger">{{session()->get('error')}}</p>
+    @endif
+
+
   <a href="{{url('Categories/create')}}" class="btn btn-success">Create New Category</a>
 
   <h4>Category List</h4>  
@@ -38,9 +48,9 @@
         <td>{{ $data->description }}</td>
 
         <td>
-          <a href=" " class="btn btn-primary">View</a>
+          <a href="{{route('admin.categories.view',$data->id)}} " class="btn btn-primary">View</a>
           <a href=" " class="btn btn-success">Update</a>
-          <a href=" " class="btn btn-danger">Delete</a>
+          <a href="{{route('admin.categories.delete',$data->id)}}" " class="btn btn-danger">Delete</a>
 
         </td>
       </tr>
