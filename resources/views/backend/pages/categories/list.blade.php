@@ -43,7 +43,7 @@
         <td>{{ $data->name }}</td>
         <td>{{ $data->status }}</td>
         <td>
-          <img src="{{ $data->image }}" alt="category_image">
+          <img src="{{url('/uploads', $data->image)}}"  height="70" width="70" alt="category_image">
         </td>
         <td>{{ $data->description }}</td>
 

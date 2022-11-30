@@ -5,8 +5,15 @@
 <h3>Here is the Category Form:- </h3>
 
 
-    <form action="{{route('Categories.store') }} " method="post">
+    <form action="{{route('Categories.store') }} " method="post" enctype="multipart/form-data">
         
+
+        @if($errors->any())
+        @foreach ($errors->all() as $message)
+        <p class="alert alert-danger">{{ $message }}</p>
+        @endforeach
+        @endif
+
     
         @csrf
 
@@ -25,7 +32,7 @@
         </div><br>
         <div> 
             <label for="">Upload image:</label><br>
-            <input type="file" name="image" >
+            <input type="file"  name="image" >
         </div><br>
         <div>
             <label for="">Description:</label>
