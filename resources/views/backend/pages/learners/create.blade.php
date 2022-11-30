@@ -5,7 +5,7 @@
 <h4>New Learner Create</h4>
 
 
-  <form action="{{ url('/learner/store')  }}" method="post" enctype="multipart/form-data">
+  <form action="{{ route('learner.store')  }}" method="post" enctype="multipart/form-data">
    
     @if ($errors->any())
         @foreach ($errors->all() as $message )

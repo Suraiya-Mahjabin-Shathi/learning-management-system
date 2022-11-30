@@ -18,7 +18,7 @@
     @endif
 
 
-  <a href="{{url('Categories/create')}}" class="btn btn-success">Create New Category</a>
+  <a href="{{route('Categories.create')}}" class="btn btn-success">Create New Category</a>
 
   <h4>Category List</h4>  
 
@@ -49,8 +49,8 @@
 
         <td>
           <a href="{{route('admin.categories.view',$data->id)}} " class="btn btn-primary">View</a>
-          <a href=" " class="btn btn-success">Update</a>
-          <a href="{{route('admin.categories.delete',$data->id)}}" " class="btn btn-danger">Delete</a>
+          <a href="{{route('admin.categories.edit',$data->id)}}" class="btn btn-success">Edit</a>
+          <a href="{{route('admin.categories.delete',$data->id)}}" class="btn btn-danger">Delete</a>
 
         </td>
       </tr>

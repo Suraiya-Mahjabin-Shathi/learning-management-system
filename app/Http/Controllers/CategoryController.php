@@ -59,4 +59,46 @@ class CategoryController extends Controller
       return view('backend.pages.categories.view',compact('category'));
     }
 
+    public function editCategory($category_id)
+    {
+        $category=Category::find($category_id);
+        return view('backend.pages.categories.edit',compact('category'));
+    }
+
+    public function update(Request $request,$category_id)
+    {
+
+//        dd($request->all());
+//        Product::find($product_id)->update([
+//            'category_id' => $request->category_id,
+//            'stock' => $request->product_stock,
+//            'price' => $request->product_price,
+//            'status' => $request->status,
+//            'description' => $request->description
+//        ]);
+
+        $category=Category::find($category_id);
+        $fileName=$category->image;
+
+        if($request->hasFile('image'))
+        {
+            // generate name
+            $fileName=date('Ymdhmi').'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->storeAs('/uploads',$fileName);
+        }
+
+
+        $category->update([
+
+            'name'=>$request->name,
+            'status'=>$request->status,
+            'image'=>$request->image,
+            'description'=>$request->description
+            
+        ]);
+
+        return redirect()->route('categories.list')->with('message','Update success.');
+
+    }
+
 }

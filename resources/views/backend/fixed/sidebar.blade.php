@@ -8,7 +8,7 @@
                     Dashboard
                 </a>
 
-                <a class="nav-link" href=" {{ url('/Categories')}}">
+                <a class="nav-link" href=" {{ route('Categories')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-gift"></i></div>
                     Categories
                 </a>

@@ -4,7 +4,7 @@
 
 <h4>Instructor Form:</h4>
 
-<form action="{{ url('/instructor/store') }}" method="post" >
+<form action="{{ route('instructor.store') }}" method="post" >
 
     @csrf
 

@@ -10,7 +10,7 @@
 
 <h1>Instructor List</h1>
 
-<a href="{{ url('/instructor/create') }}" class="btn btn-success">Create New Instructor</a>
+<a href="{{ route('instructor.create') }}" class="btn btn-success">Create New Instructor</a>
 
 <h5>New Instructor List </h5>
 

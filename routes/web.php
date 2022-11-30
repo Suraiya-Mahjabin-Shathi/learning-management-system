@@ -19,6 +19,11 @@ use App\Http\Controllers\FrontendHomeController;
 //for website
 
 Route::get('/', [FrontendHomeController::class,'home']) -> name('home');
+Route::post('/login',[FrontendHomeController::class,'login']) ->name('home.login');
+Route::post('/registration',[FrontendHomeController::class,'registration']) ->name('home.registration');
+
+Route::get('/userlogout',[FrontendHomeController::class,'userlogout']) ->name('home.logout');
+
 
 
 
@@ -27,24 +32,27 @@ Route::get('/', [FrontendHomeController::class,'home']) -> name('home');
 Route::get('/login',[UserController::class,'login'])->name('login');
 Route::post('/do-login',[UserController::class,'doLogin'])->name('do.login');
 
-Route::group(['middleware'=>'auth'],function(){
+Route::group(['middleware'=>'auth','prefix'=>'admin'],function(){
 
 Route::get('/logout',[UserController::class,'logout'])->name('logout');
 
-Route::get('/', [HomeController::class, 'Dashboard'])->middleware('auth')->name('dashboard');
-Route::get('/Categories', [CategoryController::class, 'list']);
-Route::get('/Categories/create', [CategoryController::class, 'create']);
-Route::post('/Categories/store', [CategoryController::class, 'store']);
+Route::get('/', [HomeController::class,'dashboard'])->name('dashboard');
+Route::get('/Categories', [CategoryController::class, 'list'])->name('Categories');
+Route::get('/Categories/create', [CategoryController::class, 'create'])->name('Categories.create');
+Route::post('/Categories/store', [CategoryController::class, 'store'])->name('Categories.store');
 
 Route::get('/Categories/delete/{category_id}',[CategoryController::class,'deleteCategory'])->name('admin.categories.delete');
 Route::get('/Categories/view/{category_id}',[CategoryController::class,'viewCategory'])->name('admin.categories.view');
 
+Route::get('Categories/edit/{category_id}',[CategoryController::class,'editCategory'])->name('admin.categories.edit');
+Route::put('/Categories/update/{category_id}',[CategoryController::class,'update'])->name('categories.update');
+
 Route::get('/instructor', [InstructorController::class, 'list']);
-Route::get('/instructor/create', [InstructorController::class, 'create']);
-Route::post('/instructor/store',[InstructorController::class, 'store']);
+Route::get('/instructor/create', [InstructorController::class, 'create'])->name('instructor.create');
+Route::post('/instructor/store',[InstructorController::class, 'store'])->name('instructor.store');
 Route::get('/learner', [LearnerController::class, 'list']);
-Route::get('/learner/create', [LearnerController::class, 'create']);
-Route::post('/learner/store', [LearnerController::class, 'store']);
+Route::get('/learner/create', [LearnerController::class, 'create'])->name('learner.create');
+Route::post('/learner/store', [LearnerController::class, 'store'])->name('learner.store');
 Route::get('/courses', [CourseController::class, 'list']);
 Route::get('/content', [ContentController::class, 'list']);
 Route::get('/quizzes', [QuizController::class, 'list']);

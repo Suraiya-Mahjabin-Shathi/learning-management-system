@@ -8,7 +8,7 @@
 <div class="container mt-3">
  
     <h1>This is Learner list.</h1>
-  <a href="{{ url('/learner/create') }}" class="btn btn-success" >Create New Learner</a>
+  <a href="{{ route('learner.create') }}" class="btn btn-success" >Create New Learner</a>
   
 
     <h2>Learner List</h2> 
