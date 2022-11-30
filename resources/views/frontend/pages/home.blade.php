@@ -2,6 +2,21 @@
 
 @section('content')
     
+<div class+"banner-section">
+    <section>
+        <div class="banner" style="background-image:   ">
+            <div class="container">
+                <div class="banner-container">
+                    <h1>"What do you want to learn?"</h1>
+                    <p>"We have 100+ courses to empower your future."</p>
+                </div>
+            </div>
+        
+        </div>
+    </section>
+</div>
+
+
 
     <!-- Service Start -->
     <div class="container-xxl py-5">
