@@ -50,6 +50,7 @@ class CategoryController extends Controller
         return redirect()->back();
     }
 
+
     public function deleteCategory(int $category_id)
     {
         $test = Category::find($category_id);
@@ -81,15 +82,6 @@ class CategoryController extends Controller
     public function update(Request $request, $category_id)
     {
 
-        //        dd($request->all());
-        //        Product::find($product_id)->update([
-        //            'category_id' => $request->category_id,
-        //            'stock' => $request->product_stock,
-        //            'price' => $request->product_price,
-        //            'status' => $request->status,
-        //            'description' => $request->description
-        //        ]);
-
         $category = Category::find($category_id);
         $fileName = $category->image;
 
@@ -109,6 +101,6 @@ class CategoryController extends Controller
 
         ]);
 
-        return redirect()->route('categories.list')->with('message', 'Update success.');
+        return redirect()->route('Categories')->with('message', 'Update success.');
     }
 }

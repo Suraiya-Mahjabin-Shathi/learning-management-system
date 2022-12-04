@@ -31,33 +31,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item text-center pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-globe text-primary mb-4"></i>
-                            <h5 class="mb-3">Online Classes</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item text-center pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-home text-primary mb-4"></i>
-                            <h5 class="mb-3">Home Projects</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="service-item text-center pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
-                            <h5 class="mb-3">Book Library</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>
@@ -407,12 +381,20 @@
 
         <div class="modal-body">
 
-            <form action="{{ route('home.registration') }}" method="post" >
+            <form action="{{ route('home.registration') }}" method="post" enctype="multipart/form-data">
                 @csrf
 
                 <div class="form-group">
                     <label for="email">Enter Your Name:</label>
-                    <input type="text" name="name" class="form-control" placeholder="Enter your name" id="email">
+                    <input type="text" name="name" class="form-control" placeholder="Enter your name" id="name">
+                </div>
+                <div class="form-group">
+                    <label for="image">Enter Your image:</label>
+                    <input type="file" name="image" class="form-control" placeholder="Enter your image" id="image">
+                </div>
+                <div class="form-group">
+                    <label for="email">Enter Your designation:</label>
+                    <input type="text" name="designation" class="form-control" placeholder="Enter your designation" id="designation">
                   </div>
                 <div class="form-group">
                   <label for="email">Email address:</label>
@@ -420,12 +402,16 @@
                 </div>
                 <div class="form-group">
                     <label for="email">Phone Number:</label>
-                    <input type="text" name="mobile" class="form-control" placeholder="Enter phone number" id="email">
-                  </div>
+                    <input type="text" name="mobile" class="form-control" placeholder="Enter phone number" id="mobile">
+                </div>
                 <div class="form-group">
                   <label for="pwd">Password:</label>
                   <input type="password" name="password" class="form-control" placeholder="Enter password" id="pwd">
                 </div>
+                <div class="form-group">
+                    <label for="email">Address:</label>
+                    <input type="text" name="address" class="form-control" placeholder="Enter your address" id="address">
+                  </div>
                 
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

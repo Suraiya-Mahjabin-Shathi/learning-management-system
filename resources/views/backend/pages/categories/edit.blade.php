@@ -4,7 +4,7 @@
 
 <h3>Update Category Form:- </h3>
 
-    <form action="{{route('categories.update',$category->id)}} " method="post">
+   <form action="{{route('Categories.update', $category->id)}} " method="post" enctype="multipart/form-data">
         
         @method('put')
 
@@ -24,32 +24,33 @@
 
         <div style="padding: 20px">    
         
-        <div> 
-            <label for="">Enter Category name:</label><br>
-            <input value="{{$category->name}}" type="text" class="form-control" name="name" >
-        </div><br>
-        <div>
-            <label for="">Category Status:</label>
-            <select class="form-control" name="status">
-            <option @if($product->status=='active') selected @endif value="active">Active</option>
-            <option @if($product->status=='inactive') selected @endif value="inactive">Inactive</option>
-            </select>
-        </div><br>
-        <div> 
-            <label for="">Upload image:</label><br>
-            <input type="file" name="image" >
-        </div><br>
-        <div>
-            <label for="">Description:</label>
-            <textarea class="form-control" name="description"  id="">{{$product->description}}></textarea>
-        </div> <br>
-        <div> 
-            <button class="btn btn-success">Update</button>
-         </div><br>
-    
-    
-    </form>
-    </div> 
+            <div class="form-group"> 
+                <label for="">Enter Category name:</label><br>
+                <input value="{{ $category->name}}" required  type="text" name="name" class="form-control" id="name" placeholder="Enter name">
+            </div><br>
+            <div class="form-group">
+                <label for="">Category Status:</label>
+                <select  name="status" id="status" class="form-control">
+                <option @if($category->status=='active') selected @endif value="active">Active</option>
+                <option @if($category->status=='inactive') selected @endif value="inactive">Inactive</option>
+                </select>
+            </div><br>
+            <div class="form-group"> 
+                <label for="">Upload image:</label><br>
+                <input name="image" type="file" class="form-control" id="image" >
+            </div><br>
+            <div class="form-group">
+                <label for="">Description:</label>
+                <textarea class="form-control" name="description" id="description">{{ $category->description }}</textarea>
+                </textarea>
+            </div> <br>
 
+            
+                <button type="submit" class="btn btn-success">Update</button>
+             
+        
+        
+        </form>
+        </div> 
     
 @endsection

@@ -28,10 +28,12 @@
         </div>
     </div>
     
-    <form class="navbar-form">
-       <input type="text" placeholder="Search">
-       <button  type="button" name="button" class="icon-search"></button>
-    </form>
+    <div class="search-container">
+        <form action=" ">
+          <input type="text" placeholder="Search" name="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
 
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
@@ -40,11 +42,10 @@
             <a href=" " class="nav-item nav-link">Courses</a>
 
            
-
             <a href="" class="nav-item nav-link">Contact</a>
 
             @auth
-            <a href=" " class="nav-item nav-link">{{ auth()->user()->name}}</a>
+            <a href="{{ route('user.profile') }} " class="nav-item nav-link">{{ auth()->user()->name}}</a>
             <a href="{{ route('home.logout') }}" class="nav-item nav-link">Logout</a>
            
             @else

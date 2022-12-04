@@ -21,10 +21,14 @@ use App\Http\Controllers\FrontendHomeController;
 Route::get('/', [FrontendHomeController::class,'home']) -> name('home');
 Route::post('/login',[FrontendHomeController::class,'login']) ->name('home.login');
 Route::post('/registration',[FrontendHomeController::class,'registration']) ->name('home.registration');
+Route::get('/search',[FrontendHomeController::class,'search'])->name('user.search');
 
-Route::get('/userlogout',[FrontendHomeController::class,'userlogout']) ->name('home.logout');
-
-
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/userlogout',[FrontendHomeController::class,'userlogout']) ->name('home.logout');
+    Route::get('/profile',[FrontendHomeController::class,'profile'])->name('user.profile');
+    Route::get('/profile/edit/{profile_id}',[FrontendHomeController::class,'editProfile'])->name('profile.edit');
+    Route::put('/profile/update/{profile_id}',[FrontendHomeController::class,'updateProfile'])->name('profile.update');
+});
 
 
 //for admin
@@ -44,8 +48,8 @@ Route::post('/Categories/store', [CategoryController::class, 'store'])->name('Ca
 Route::get('/Categories/delete/{category_id}',[CategoryController::class,'deleteCategory'])->name('admin.categories.delete');
 Route::get('/Categories/view/{category_id}',[CategoryController::class,'viewCategory'])->name('admin.categories.view');
 
-Route::get('Categories/edit/{category_id}',[CategoryController::class,'editCategory'])->name('admin.categories.edit');
-Route::put('/Categories/update/{category_id}',[CategoryController::class,'update'])->name('categories.update');
+Route::get('/Categories/edit/{category_id}',[CategoryController::class,'editCategory'])->name('admin.categories.edit');
+Route::put('/Categories/update/{category_id}',[CategoryController::class,'update'])->name('Categories.update');
 
 Route::get('/instructor', [InstructorController::class, 'list']);
 Route::get('/instructor/create', [InstructorController::class, 'create'])->name('instructor.create');

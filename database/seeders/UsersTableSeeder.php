@@ -21,7 +21,10 @@ class UsersTableSeeder extends Seeder
             'email'=> 'admin@gmail.com',
             'password'=> bcrypt('12345'),
             'mobile'=>'01706690057',
-           
+            'address'=> 'address',
+            'designation'=> 'designation',
+            
+            
         ]);
     }
 }

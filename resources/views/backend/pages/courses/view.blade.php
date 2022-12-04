@@ -1,6 +1,10 @@
 @extends('backend.master')
 
 @section('content')
+    
+@extends('backend.master')
+
+@section('content')
 
 
 <style type="text/css">
@@ -114,17 +118,25 @@
         <div class="card">
             <div class="top-design"></div>
             <div class="card-body"><img
-                src="{{url('/uploads/'.$category->image)}}" alt="" class="avatar" > <br><br><br>
+                src="{{url('/uploads/'.$category->image)}}" alt="" class="avatar" >
                 <div class="user-info">
                     <h3>{{$category->name}}</h3> <span class="text-muted"><br>
                         {{$category->description}}
                     </span>
-                </div> <br> <br>
+                </div>
 
-                
+
+
+               WRITE/COPY from fallb1  BDT CODE
+
+               
 
                 <div class="bg-t">
-                    
+                    <div class="link-b">
+                        <a class="btn btn-primary btn-twitter btn-sm" href="#"> <i class="fa fa-twitter"></i> </a> 
+                        <a class="btn btn-danger btn-sm" rel="publisher" href="#"> <i class="fa fa-instagram"></i> </a> 
+                        <a class="btn btn-primary btn-sm" rel="publisher" href="#"> <i class="fa fa-facebook"></i> </a>
+                    </div>
                 </div>
                 <div class="input-group mb-3 w-75 mx-auto">
                     <button class="btn addBtn form-control" aria-describedby="myBtn">Back</button>
@@ -137,4 +149,8 @@
 </div>
 
     
+@endsection
+
+
+
 @endsection
