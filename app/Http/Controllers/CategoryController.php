@@ -25,14 +25,15 @@ class CategoryController extends Controller
     {
         //  dd($request->all());
         $request->validate([
-            "name"=>"required |unique:categories,name"
+            "name"=>"required|unique:categories,name"
         ]
         
         );
-        // dd($fileName);
+         //dd($fileName);
 
         $fileName = null;
-        if ($request->hasFile('image')) {
+        if ($request->hasFile('image')) 
+        {
             $fileName = date('ymdhmi') . '.' . $request->file('image')->getClientOriginalExtension();
             $request->file('image')->storeAs('/uploads',$fileName);
         }
@@ -47,7 +48,7 @@ class CategoryController extends Controller
             'description' => $request->description
         ]);
 
-        return redirect()->back();
+        return redirect()->route('Categories');
     }
 
 

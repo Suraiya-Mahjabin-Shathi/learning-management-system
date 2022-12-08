@@ -13,48 +13,48 @@
                     Categories
                 </a>
                 
-                <a class="nav-link" href="{{ url('/instructor') }}">
+                <a class="nav-link" href="{{ route('instructor') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                     Instructor
                 </a>
 
-                <a class="nav-link" href="{{ url('/learner') }}">
+                <a class="nav-link" href="{{ route('learner') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                     Learner
                 </a>
 
-                <a class="nav-link" href="{{ url('/courses') }}">
+                <a class="nav-link" href="{{ route('enrollment') }}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                    Enrollment
+                </a>
+
+                <a class="nav-link" href="{{ route('courses') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-book"></i></div>
                     Courses
                 </a>
-
-                <a class="nav-link" href="{{ url('/content') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-arrows-to-circle"></i></div>
-                    Content
-                </a>
                 
-                <a class="nav-link" href="{{ url('/quizzes') }}">
+                <a class="nav-link" href="{{ route('quizzes') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-pen-to-square"></i></div>
                     Quizzes
                 </a>
 
-                <a class="nav-link" href="{{ url('/feedback') }}">
+                <a class="nav-link" href="{{ route('feedback') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-message"></i></div>
                     Feedback
                 </a>
 
-                <a class="nav-link" href="{{ url('/certificate') }}">
+                <a class="nav-link" href="{{ route('certificate') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-certificate"></i></div>
                     Certificates
                 </a>
-                <a class="nav-link" href="{{ url('/payment') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-money-check-dollar"></i></div>
-                    Payment
-                </a>
-
-                <a class="nav-link" href="{{ url('/settings') }}">
+               
+                <a class="nav-link" href="{{ route('settings') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-money-check-dollar"></i></div>
                     Settings
+                </a>
+                <a class="nav-link" href="{{ route('report') }}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-certificate"></i></div>
+                    Report
                 </a>
 
             </div>

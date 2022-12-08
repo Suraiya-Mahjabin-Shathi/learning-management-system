@@ -57,6 +57,7 @@ class LearnerController extends Controller
             'mark'=>$request->mark,
 
         ]);
+        return redirect()->route("learner");
     }
 
 

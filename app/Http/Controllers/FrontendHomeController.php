@@ -2,16 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use notify;
 use App\Models\User;
+use App\Models\Course;
+use App\Models\Category;
+use App\Models\Enrollment;
+use App\Models\Instructor;
 use Illuminate\Http\Request;
 
 class FrontendHomeController extends Controller
 {
     public function home(){
+
+        $categories=Category::all();
+        $courses= Course::all();
+        $instructors=Instructor::all();
+        
      
-        return view ('frontend.pages.home');
+        return view ('frontend.pages.home', compact('categories','courses','instructors'));
     }
 
 
@@ -68,7 +76,13 @@ class FrontendHomeController extends Controller
     }
 
     public function profile(){
-        return view('frontend.pages.profile');
+        if(auth()->user()){
+
+            $enrollments = Enrollment::where('user_id',auth()->user()->id)->get();
+            return view('frontend.pages.profile',compact('enrollments'));
+        }else{
+            return to_route('home');
+        }
     }
 
     public function editProfile($profile_id)
@@ -101,7 +115,7 @@ class FrontendHomeController extends Controller
 
     public function search(Request $request)
     {
-        $searchResult=Category::where('name','LIKE','%'.$request->search_key.'%')->get();
+        $searchResult=Category::where('name','LIKE','%'.$request->search.'%')->get();
 
       return view('frontend.pages.search',compact('searchResult'));
     }

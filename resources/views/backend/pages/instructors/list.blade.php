@@ -22,8 +22,8 @@
            <th scope="col">Learner_Name</th>
            <th scope="col">Address</th>
            <th scope="col">Image</th>
-           <th scope="col">Mobile</th>
            <th scope="col">Email</th>
+           <th scope="col">Mobile</th>
            <th scope="col">Date_of_Birth</th>
            <th scope="col">Action</th>
         </tr>
@@ -37,7 +37,7 @@
             <td>{{$data->name}}</td>
             <td>{{$data->address}}</td>
             <td>
-                <img src="{{$data->image}}" alt="image">
+                <img width="100px" style="border-radius: 10px" src="{{url('/uploads/'.$data->image)}}" alt="instructor's_image">
               </td>
             <td>{{$data->email}}</td>
             <td>{{$data->mobile}}</td>

@@ -2,21 +2,9 @@
 
 @section('content')
 
-
-
 <div class="container mt-3">
 
   <h1>This is Category List</h1>
-
-
-  @if(session()->has('message'))
-        <p class="alert alert-success">{{session()->get('message')}}</p>
-      @endif
-
-    @if(session()->has('error'))
-        <p class="alert alert-danger">{{session()->get('error')}}</p>
-    @endif
-
 
   <a href="{{route('Categories.create')}}" class="btn btn-success">Create New Category</a>
 
@@ -60,8 +48,6 @@
 
     </tbody>
   </table>
-
-  {{ $cats->links() }}
 </div>
 
 </body>

@@ -11,9 +11,11 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\EnrollmentController;
 use App\Http\Controllers\InstructorController;
 use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\FrontendHomeController;
+use App\Http\Controllers\Frontend\FrontendEnrollmentController;
 
 
 //for website
@@ -31,6 +33,14 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 
+
+// Course enrollment 
+Route::get('/enrollment-form/{course_id}',[FrontendEnrollmentController::class,'form'])->name('enrollment.form');
+Route::post('/enrollment-form-save/{course_id}',[FrontendEnrollmentController::class,'save'])->name('enrollment.frontend.save');
+
+
+
+
 //for admin
 
 Route::get('/login',[UserController::class,'login'])->name('login');
@@ -41,6 +51,7 @@ Route::group(['middleware'=>'auth','prefix'=>'admin'],function(){
 Route::get('/logout',[UserController::class,'logout'])->name('logout');
 
 Route::get('/', [HomeController::class,'dashboard'])->name('dashboard');
+
 Route::get('/Categories', [CategoryController::class, 'list'])->name('Categories');
 Route::get('/Categories/create', [CategoryController::class, 'create'])->name('Categories.create');
 Route::post('/Categories/store', [CategoryController::class, 'store'])->name('Categories.store');
@@ -51,18 +62,29 @@ Route::get('/Categories/view/{category_id}',[CategoryController::class,'viewCate
 Route::get('/Categories/edit/{category_id}',[CategoryController::class,'editCategory'])->name('admin.categories.edit');
 Route::put('/Categories/update/{category_id}',[CategoryController::class,'update'])->name('Categories.update');
 
-Route::get('/instructor', [InstructorController::class, 'list']);
+Route::get('/instructor', [InstructorController::class, 'list'])->name('instructor');
 Route::get('/instructor/create', [InstructorController::class, 'create'])->name('instructor.create');
 Route::post('/instructor/store',[InstructorController::class, 'store'])->name('instructor.store');
-Route::get('/learner', [LearnerController::class, 'list']);
+Route::get('/learner', [LearnerController::class, 'list'])->name('learner');
 Route::get('/learner/create', [LearnerController::class, 'create'])->name('learner.create');
 Route::post('/learner/store', [LearnerController::class, 'store'])->name('learner.store');
-Route::get('/courses', [CourseController::class, 'list']);
-Route::get('/content', [ContentController::class, 'list']);
-Route::get('/quizzes', [QuizController::class, 'list']);
-Route::get('/feedback', [FeedbackController::class, 'list']);
-Route::get('/certificate', [CertificateController::class, 'list']);
-Route::get('/payment', [PaymentController::class, 'list']);
-Route::get('/settings', [SettingsController::class, 'list']);
+
+Route::get('/enrollment', [EnrollmentController::class, 'list'])->name('enrollment');
+Route::get('/enrollment/create', [EnrollmentController::class, 'create'])->name('enrollment.create');
+Route::post('/enrollment/store', [EnrollmentController::class, 'store'])->name('enrollment.store');
+
+
+Route::get('/courses', [CourseController::class, 'list'])->name('courses');
+Route::get('/courses/create', [CourseController::class, 'create'])->name('courses.create');
+Route::post('/courses/store', [CourseController::class, 'store'])->name('courses.store');
+
+
+Route::get('/content', [ContentController::class, 'list'])->name('content');
+Route::get('/quizzes', [QuizController::class, 'list'])->name('quizzes');
+Route::get('/feedback', [FeedbackController::class, 'list'])->name('feedback');
+Route::get('/certificate', [CertificateController::class, 'list'])->name('certificate');
+Route::get('/payment', [PaymentController::class, 'list'])->name('payment');
+Route::get('/settings', [SettingsController::class, 'list'])->name('settings');
+Route::get('/report', [ReportController::class, 'list'])->name('report');
 
 });

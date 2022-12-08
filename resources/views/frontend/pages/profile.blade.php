@@ -58,6 +58,45 @@ background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 1
               </div>
             
 
+
+              
+
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">User ID</th>
+                    <th scope="col">Course ID</th>
+                    <th scope="col">Enrollment Date</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Payment Type</th>
+                    <th scope="col">Transaction ID</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @foreach ($enrollments as $data)
+                    
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>{{ $data->user_id }}</td>
+                    <td>{{ $data->course_id }}</td>
+                    <td>{{ $data->enrollmet_date }}</td>
+                    <td>{{ $data->amount }}</td>
+                    <td>{{ $data->payment_type }}</td>
+                    <td>{{ $data->transaction_id }}</td>
+                  </tr>
+                  @endforeach
+
+
+
+
+                </tbody>
+              </table>
+
+
+
+
+
             </div>
           </div>
         </div>

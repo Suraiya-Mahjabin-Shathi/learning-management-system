@@ -4,7 +4,14 @@
 
 <h4>Instructor Form:</h4>
 
-<form action="{{ route('instructor.store') }}" method="post" >
+<form action="{{ route('instructor.store') }}" method="post" enctype="multipart/form-data" >
+
+    @if($errors->any())
+    @foreach ($errors->all() as $message)
+    <p class="alert alert-danger">{{ $message }}</p>
+    @endforeach
+    @endif
+
 
     @csrf
 
@@ -12,31 +19,29 @@
 
     <div>
         <label for=" ">Instructor's Name:</label><br>
-        <input type="text"  name='instructor_name'>
-    </div><br>
+        <input type="text" class="form-control" name='instructor_name'>
+    </div>
     <div>
         <label for=" ">Instructor's Address:</label><br>
-        <input type="text"  name="instructor_address">
-    </div><br>
+        <input type="text" class="form-control" name="instructor_address">
+    </div>
     <div>
         <label for=" ">Instructor's Image:</label><br>
-        <input type="text"  name="instructor_image">
-    </div><br>
+        <input type="file" class="form-control" name="image">
+    </div>
     <div>
         <label for=" ">Instructor's E-mail:</label><br>
-        <input type="text"  name="instructor_email">
-    </div><br>
+        <input type="text" class="form-control" name="instructor_email">
+    </div>
     <div>
         <label for=" ">Instructor's Mobile Number:</label><br>
-        <input type="text"  name="instructor_mobile">
-    </div><br>
+        <input type="text" class="form-control" name="instructor_mobile">
+    </div>
     <div>
         <label for=" ">Date of Birth:</label><br>
-        <input type="date"  name="date_of_birth">
-    </div><br>
-    <div> 
-        <input type="checkbox" name="Remember">Remember me
-    </div><br>
+        <input type="date" class="form-control" name="date_of_birth">
+    </div>
+   
 
     <button class="btn btn-success">Submit</button>
   </div>

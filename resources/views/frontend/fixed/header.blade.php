@@ -5,7 +5,7 @@
     </a>
 
     <div class="nav-item dropdown">
-        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Categories</a>
+        <a href=" " class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Categories</a>
         <div class="dropdown-menu fade-down m-0">
             <a href=" " class="dropdown-item">Language Learning Course</a>
             <a href=" " class="dropdown-item"></a>
@@ -28,10 +28,14 @@
         </div>
     </div>
     
-    <div class="search-container">
-        <form action=" ">
-          <input type="text" placeholder="Search" name="search">
-          <button type="submit"><i class="fa fa-search"></i></button>
+    <div class=" col-lg-6 col-6 text-left">
+        <form action="{{ route('user.search')}}">
+
+            <div class="input-group">
+                <input type="text" name="search" class="form-control" placeholder="Search for category">
+                <button type="submit" class="btn btn-success">Search</button>
+            </div>
+
         </form>
     </div>
 
@@ -39,9 +43,6 @@
         <div class="navbar-nav ms-auto p-4 p-lg-0">
             <a href=" " class="nav-item nav-link">Home</a>
             <a href=" " class="nav-item nav-link">About</a>
-            <a href=" " class="nav-item nav-link">Courses</a>
-
-           
             <a href="" class="nav-item nav-link">Contact</a>
 
             @auth
