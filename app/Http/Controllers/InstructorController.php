@@ -9,7 +9,6 @@ class InstructorController extends Controller
 {
     public function list(){
         $time=Instructor::all();
-
        // dd($time);
         return view('backend.pages.instructors.list', compact('time'));
     }
@@ -18,8 +17,7 @@ class InstructorController extends Controller
     }
 
     public function store(Request $request){
-        // dd($request->all());
-
+       
         $fileName = null;
         if ($request->hasFile('image')) 
         {
@@ -27,18 +25,65 @@ class InstructorController extends Controller
             $request->file('image')->storeAs('/uploads',$fileName);
         }
 
-// dd($fileName);
         Instructor::create([
-            //database colomn name=>input field name
-
-           'name'=>$request->instructor_name,
-           'address'=>$request->instructor_address,
+            //database column name=>input field name
+           'name'=>$request->name,
+           'address'=>$request->address,
            'image'=>$fileName,
-           'e-mail'=>$request->instructor_email,
-           'Mobile'=>$request->instructor_mobile,
+           'email'=>$request->email,
+           'mobile'=>$request->mobile,
            'date_of_birth'=>$request->date_of_birth,
         ]);
         return redirect()->route("instructor");
-
     }
+
+    public function deleteInstructor(int $instructor_id)
+    {
+        $test=Instructor::find($instructor_id);
+        if($test){
+          $test->delete();
+          return redirect()->back()->with('message','instructor deleted successfully.');
+        }
+        else{
+          return redirect()->back()->with('error','instructor not found.');
+        }
+    }
+    
+    public function viewInstructor($instructor_id)
+    {
+      $instructor=Instructor::find($instructor_id);
+      return view('backend.pages.instructors.view',compact('instructor'));
+    }
+
+    public function editInstructor($instructor_id)
+    {
+        $instructor=Instructor::find($instructor_id);
+       
+        return view('backend.pages.instructors.edit',compact('instructor'));
+    }
+
+    public function update(Request $request, $instructor_id)
+    {
+
+        $instructor =Instructor::find($instructor_id);
+        $fileName = $instructor->image;
+
+        if ($request->hasFile('image')) {
+            // generate name
+            $fileName = date('Ymdhmi') . '.' . $request->file('image')->getClientOriginalExtension();
+            $request->file('image')->storeAs('/uploads', $fileName);
+        }
+
+        $instructor->update([
+
+            'name'=>$request->name,
+            'address'=>$request->address,
+            'image'=>$fileName,
+            'email'=>$request->email,
+            'mobile'=>$request->mobile,
+            'date_of_birth'=>$request->date_of_birth
+        ]);
+        return redirect()->route('instructor')->with('message', 'Update success.');
+    }
+
 }

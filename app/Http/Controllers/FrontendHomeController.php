@@ -39,7 +39,8 @@ class FrontendHomeController extends Controller
             'mobile'=>$request->mobile,
             'address'=>$request->address,
             'password'=>bcrypt($request->password),
-            'role'=>'customer',
+            'role'=>'learner',
+
             'image' => $fileName,
 
         ]);  
@@ -103,22 +104,17 @@ class FrontendHomeController extends Controller
             'mobile'=>$request->mobile,
             'address'=>$request->address,
             'password'=>bcrypt($request->password),
-            'role'=>'customer'
+            'role'=>'learner'
         ]);
 
         notify()->success('User profile updated.');
         return redirect()->back();
     }
 
-    
-
-
     public function search(Request $request)
     {
-        $searchResult=Category::where('name','LIKE','%'.$request->search.'%')->get();
+        $searchResult=Course::where('name','LIKE','%'.$request->search.'%')->get();
 
       return view('frontend.pages.search',compact('searchResult'));
     }
-
-
 }

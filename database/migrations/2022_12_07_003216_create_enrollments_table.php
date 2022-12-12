@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('course_id');
             $table->string('enrollment_date');
             $table->string('amount');
+            $table->string('payment_date');
             $table->string('payment_type');
             $table->text('transaction_id');
             $table->timestamps();

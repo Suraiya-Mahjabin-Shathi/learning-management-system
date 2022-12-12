@@ -15,13 +15,14 @@
         <input type="text" class="form-control" name="user_id" >
     </div>
     <div> 
+        <label for="">Enter Course ID:</label><br>
+        <input type="text" class="form-control" name="course_id" >
+    </div>
+    <div> 
         <label for="">Enrollment Date:</label><br>
         <input type="date" class="form-control" name="enrollment_date" >
     </div>
-    <div> 
-        <label for="">Payment ID:</label><br>
-        <input type="text" class="form-control" name="payment_id" >
-    </div>
+
     <div> 
         <label for="">Payment Date:</label><br>
         <input type="date" class="form-control" name="payment_date" >

@@ -6,6 +6,16 @@
 
   <h1>This is Category List</h1>
 
+
+    @if(session()->has('message'))
+      <p class="alert alert-success">{{session()->get('message')}}</p>
+    @endif
+
+    @if(session()->has('error'))
+      <p class="alert alert-danger">{{session()->get('error')}}</p>
+    @endif
+
+
   <a href="{{route('Categories.create')}}" class="btn btn-success">Create New Category</a>
 
   <h4>Category List</h4>  
@@ -24,8 +34,8 @@
     
     <tbody>
 
-      @foreach($cats as $data)
 
+      @foreach($cats as $data)
       <tr>
         <th scope="row">{{ $data->id }}</th>
         <td>{{ $data->name }}</td>
@@ -42,7 +52,6 @@
 
         </td>
       </tr>
-
       @endforeach
 
 

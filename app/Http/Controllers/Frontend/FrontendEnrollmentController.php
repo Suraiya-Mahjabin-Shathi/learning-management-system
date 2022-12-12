@@ -22,7 +22,7 @@ class FrontendEnrollmentController extends Controller
             'user_id'=>auth()->user()->id,
             'course_id'=>$course->id,
             'enrollment_date'=> $request->enrollment_date,
-            'enrollment_date'=> $request->payment_date,
+            'payment_date'=> $request->payment_date,
             'amount'=> $request->amount,
             'payment_type'=> $request->payment_type,
             'transaction_id'=> $request->transaction_id,

@@ -19,6 +19,7 @@
             <th scope="col">Course type</th>
             <th scope="col">Image</th>
             <th scope="col">Content</th>
+            <th scope="col">Price</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
@@ -33,10 +34,11 @@
               <img src="{{url('/uploads/',$data->image)}}" height="70" width="70"  alt="course_image">
             </td>
             <td> {{ $data->content }}</td>
+            <td> {{ $data->price }}</td>
             <td>
-                <a href=" " class="btn btn-primary">View</a>
-                <a href=" " class="btn btn-success">Edit</a>
-                <a href=" " class="btn btn-danger">Delete</a>
+                <a href=" {{route('admin.course.view',$data->id)}}" class="btn btn-primary">View</a>
+                <a href="{{route('admin.course.edit',$data->id)}} " class="btn btn-success">Edit</a>
+                <a href="{{route('admin.course.delete',$data->id)}}" class="btn btn-danger">Delete</a>
       
               </td>
           </tr>

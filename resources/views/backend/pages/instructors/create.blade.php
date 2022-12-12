@@ -19,11 +19,11 @@
 
     <div>
         <label for=" ">Instructor's Name:</label><br>
-        <input type="text" class="form-control" name='instructor_name'>
+        <input type="text" class="form-control" name='name'>
     </div>
     <div>
         <label for=" ">Instructor's Address:</label><br>
-        <input type="text" class="form-control" name="instructor_address">
+        <input type="text" class="form-control" name="address">
     </div>
     <div>
         <label for=" ">Instructor's Image:</label><br>
@@ -31,24 +31,20 @@
     </div>
     <div>
         <label for=" ">Instructor's E-mail:</label><br>
-        <input type="text" class="form-control" name="instructor_email">
+        <input type="email" class="form-control" name="email">
     </div>
     <div>
         <label for=" ">Instructor's Mobile Number:</label><br>
-        <input type="text" class="form-control" name="instructor_mobile">
+        <input type="text" class="form-control" name="mobile">
     </div>
     <div>
         <label for=" ">Date of Birth:</label><br>
         <input type="date" class="form-control" name="date_of_birth">
     </div>
    
-
     <button class="btn btn-success">Submit</button>
   </div>
-  
 </form>
-    
-
 
 
 @endsection

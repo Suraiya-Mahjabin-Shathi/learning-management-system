@@ -8,6 +8,8 @@
                     Dashboard
                 </a>
 
+
+              
                 <a class="nav-link" href=" {{ route('Categories')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-gift"></i></div>
                     Categories
@@ -17,6 +19,7 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                     Instructor
                 </a>
+
 
                 <a class="nav-link" href="{{ route('learner') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
@@ -42,7 +45,8 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-message"></i></div>
                     Feedback
                 </a>
-
+                
+ 
                 <a class="nav-link" href="{{ route('certificate') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-certificate"></i></div>
                     Certificates

@@ -24,8 +24,8 @@ class EnrollmentController extends Controller
             //database column name=>input field name
 
             'user_id'=> $request->user_id,
+            'course_id'=> $request->course_id,
             'enrollment_date'=> $request->enrollment_date,
-            'payment_id'=> $request->payment_id,
             'payment_date'=> $request->payment_date,
             'amount'=> $request->amount,
             'payment_type'=> $request->payment_type,

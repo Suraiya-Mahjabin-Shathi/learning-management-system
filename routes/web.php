@@ -40,7 +40,6 @@ Route::post('/enrollment-form-save/{course_id}',[FrontendEnrollmentController::c
 
 
 
-
 //for admin
 
 Route::get('/login',[UserController::class,'login'])->name('login');
@@ -58,16 +57,28 @@ Route::post('/Categories/store', [CategoryController::class, 'store'])->name('Ca
 
 Route::get('/Categories/delete/{category_id}',[CategoryController::class,'deleteCategory'])->name('admin.categories.delete');
 Route::get('/Categories/view/{category_id}',[CategoryController::class,'viewCategory'])->name('admin.categories.view');
-
 Route::get('/Categories/edit/{category_id}',[CategoryController::class,'editCategory'])->name('admin.categories.edit');
 Route::put('/Categories/update/{category_id}',[CategoryController::class,'update'])->name('Categories.update');
 
 Route::get('/instructor', [InstructorController::class, 'list'])->name('instructor');
 Route::get('/instructor/create', [InstructorController::class, 'create'])->name('instructor.create');
 Route::post('/instructor/store',[InstructorController::class, 'store'])->name('instructor.store');
+
+Route::get('/instructor/delete/{instructor_id}',[InstructorController::class,'deleteInstructor'])->name('admin.instructor.delete');
+Route::get('/instructor/view/{instructor_id}',[InstructorController::class,'viewInstructor'])->name('admin.instructor.view');
+Route::get('/instructor/edit/{instructor_id}',[InstructorController::class,'editInstructor'])->name('admin.instructor.edit');
+Route::put('/instructor/update/{instructor_id}',[InstructorController::class,'update'])->name('instructor.update');
+
 Route::get('/learner', [LearnerController::class, 'list'])->name('learner');
 Route::get('/learner/create', [LearnerController::class, 'create'])->name('learner.create');
 Route::post('/learner/store', [LearnerController::class, 'store'])->name('learner.store');
+
+Route::get('/learner/delete/{learner_id}',[LearnerController::class,'deleteLearner'])->name('admin.learner.delete');
+Route::get('/learner/view/{learner_id}',[LearnerController::class,'viewLearner'])->name('admin.learner.view');
+Route::get('/learner/edit/{learner_id}',[LearnerController::class,'editLearner'])->name('admin.learner.edit');
+Route::put('/learner/update/{learner_id}',[LearnerController::class,'update'])->name('learner.update');
+
+
 
 Route::get('/enrollment', [EnrollmentController::class, 'list'])->name('enrollment');
 Route::get('/enrollment/create', [EnrollmentController::class, 'create'])->name('enrollment.create');
@@ -77,6 +88,11 @@ Route::post('/enrollment/store', [EnrollmentController::class, 'store'])->name('
 Route::get('/courses', [CourseController::class, 'list'])->name('courses');
 Route::get('/courses/create', [CourseController::class, 'create'])->name('courses.create');
 Route::post('/courses/store', [CourseController::class, 'store'])->name('courses.store');
+
+Route::get('/courses/delete/{course_id}',[CourseController::class,'deleteCourse'])->name('admin.course.delete');
+Route::get('/courses/view/{course_id}',[CourseController::class,'viewCourse'])->name('admin.course.view');
+Route::get('/course/edit/{course_id}',[CourseController::class,'edit'])->name('admin.course.edit');
+Route::put('/course/update/{course_id}',[CourseController::class,'update'])->name('course.update');
 
 
 Route::get('/content', [ContentController::class, 'list'])->name('content');

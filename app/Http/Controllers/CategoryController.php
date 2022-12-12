@@ -11,7 +11,6 @@ class CategoryController extends Controller
     public function list()
     {
         $cats = Category::paginate(5);
-
         //dd($cats);
         return view('backend.pages.categories.list', compact('cats'));
     }
@@ -26,31 +25,24 @@ class CategoryController extends Controller
         //  dd($request->all());
         $request->validate([
             "name"=>"required|unique:categories,name"
-        ]
-        
-        );
+        ]);
          //dd($fileName);
-
         $fileName = null;
         if ($request->hasFile('image')) 
         {
             $fileName = date('ymdhmi') . '.' . $request->file('image')->getClientOriginalExtension();
             $request->file('image')->storeAs('/uploads',$fileName);
         }
-
-//   dd($fileName);
+    //   dd($fileName);
         Category::create([
             //database colomn name=>input field name
-
             'name' => $request->name,
             'status' => $request->status,
             'image' => $fileName,
             'description' => $request->description
         ]);
-
         return redirect()->route('Categories');
     }
-
 
     public function deleteCategory(int $category_id)
     {
@@ -61,12 +53,7 @@ class CategoryController extends Controller
         } else {
             return redirect()->back()->with('error', 'category not found.');
         }
-
-
-        //        Product::findOrFail($product_id)->delete();
-        //        return redirect()->back()->with('message','product deleted successfully.');
     }
-
 
     public function viewCategory($category_id)
     {
@@ -92,16 +79,13 @@ class CategoryController extends Controller
             $request->file('image')->storeAs('/uploads', $fileName);
         }
 
-
         $category->update([
 
             'name' => $request->name,
             'status' => $request->status,
             'image' => $fileName,
             'description' => $request->description
-
         ]);
-
         return redirect()->route('Categories')->with('message', 'Update success.');
     }
 }

@@ -19,7 +19,7 @@
     <thead>
         <tr>
            <th scope="col">ID</th>
-           <th scope="col">Learner_Name</th>
+           <th scope="col">Instructor_Name</th>
            <th scope="col">Address</th>
            <th scope="col">Image</th>
            <th scope="col">Email</th>
@@ -44,9 +44,9 @@
             <td>{{$data->date_of_birth}}</td>
            
             <td>
-              <a href="" class="btn btn-primary">View</a>
-              <a href="" class="btn btn-success">Update</a>
-              <a href="" class="btn btn-danger">Delete</a>
+              <a href="{{route('admin.instructor.view',$data->id)}}" class="btn btn-primary">View</a>
+              <a href="{{route('admin.instructor.edit',$data->id)}}" class="btn btn-success">Edit</a>
+              <a href="{{route('admin.instructor.delete',$data->id)}}" class="btn btn-danger">Delete</a>
   
             </td>          
           </tr>

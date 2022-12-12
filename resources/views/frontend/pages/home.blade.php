@@ -3,15 +3,16 @@
 @section('content')
     
 
+<>
 <section>
-  <div class="banner" style="background-image: url('/uploads/front3.jpg')">
+  <div class="banner" style="height:500px; background-image: url('http://localhost/learning-management-system/public/uploads/front3.jpg')">
     <div class="container">
       <div class="banner-content">
         <h1>
           "What do you want to learn?"
         </h1>
         <p>
-          " We have 50+ affordable courses to empower your future."
+          " We have 30+ affordable courses to empower your future."
         </p>
       </div>
     </div>
@@ -19,6 +20,50 @@
 </section>
 
 
+ <!-- Service Start -->
+ <div class="container-xxl py-5">
+  <div class="container">
+      <div class="row g-4">
+          <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="service-item text-center pt-3">
+                  <div class="p-4">
+                      <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
+                      <h5 class="mb-3">Skilled Instructors</h5>
+                      <p>We have very skilled instructors who will take the courses.</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+              <div class="service-item text-center pt-3">
+                  <div class="p-4">
+                      <i class="fa fa-3x fa-globe text-primary mb-4"></i>
+                      <h5 class="mb-3">Online Classes</h5>
+                      <p>We have online classes which will very helpful for your future plan.</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+              <div class="service-item text-center pt-3">
+                  <div class="p-4">
+                      <i class="fa fa-3x fa-home text-primary mb-4"></i>
+                      <h5 class="mb-3">Home Projects</h5>
+                      <p>By doing our course you can make your own home projects.</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+              <div class="service-item text-center pt-3">
+                  <div class="p-4">
+                      <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
+                      <h5 class="mb-3">Book Library</h5>
+                      <p>You can also read books and megazine from our book library.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Service End -->
 
 
     <!-- Category Start -->
@@ -48,7 +93,9 @@
                   </div>
               </div>
               @endforeach
-                  
+            </div>
+          </div>    
+        </div>
   <!-- Courses End -->
   
 
@@ -82,7 +129,9 @@
                 </div>
                 @endforeach
             
-                    
+              </div>
+            </div>
+          </div>
     <!-- Courses End -->
     
     
@@ -93,7 +142,7 @@
                 <h6 class="section-title bg-white text-center text-primary px-3">Instructors</h6>
                 <h1 class="mb-5">Expert Instructors</h1>
             </div>
-    <div class="row">
+              <div class="row">
                 @foreach ($instructors as $data)
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="card" style="width: 18rem;">
@@ -107,56 +156,12 @@
                 </div>
                 @endforeach
     </div>
-
+  </div>
+</div>
             
                      
     <!-- Team End -->
     
-    
-    <!-- Testimonial Start -->
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="text-center">
-                <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
-                <h1 class="mb-5">Our Students Say!</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel position-relative">
-                <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-1.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-2.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-3.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-4.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Testimonial End -->
     
     <!-- Button trigger modal -->
 
@@ -254,38 +259,5 @@
   </div>
     
 
-
-
-   <!-- Products Start -->
-   <div class="container-fluid pt-5">
-    <div class="text-center mb-4">
-        <h2 class="section-title px-5"><span class="px-2">Trandy Products</span></h2>
-    </div>
-    <div class="row px-xl-5 pb-3">
-
-      
-        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-            <div class="card product-item border-0 mb-4">
-                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                    <img class="img-fluid w-100" src=" " alt="">
-                </div>
-                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                    <h6 class="text-truncate mb-3">name</h6>
-                    <div class="d-flex justify-content-center">
-                        <h6> BDT</h6>
-{{--                            <h6 class="text-muted ml-2"><del>$123.00</del></h6>--}}
-                    </div>
-                </div>
-                <div class="card-footer d-flex justify-content-between bg-light border">
-                    <a href=" " class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                    <a href=" " class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
-                </div>
-            </div>
-        </div>
-
-
-    </div>
-</div>
-<!-- Products End -->
 
 @endsection

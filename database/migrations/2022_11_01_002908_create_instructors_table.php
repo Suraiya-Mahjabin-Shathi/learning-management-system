@@ -18,7 +18,7 @@ return new class extends Migration
             $table ->string( column: 'name', length: '50');
             $table ->string( column: 'address', length: '50');
             $table->text( column: 'image')->nullable();
-            $table->text( column: 'e-mail');
+            $table->text( column: 'email');
             $table->string( column: 'mobile', length: '20');
             $table->text( column: 'date_of_birth');
             $table->timestamps();

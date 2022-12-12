@@ -29,8 +29,6 @@ background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 1
                 <img src="{{ url("uploads/", auth()->user()->image)}}"
                   alt="Avatar" class="rounded  d-block mx-5 my-5 " style="width: 80px;" />
 
-            
-                  
                 <h5>{{ auth()->user()->name }}</h5>
                 <h5>{{ auth()->user()->designation }}</h5>
                 <a href="{{route('profile.edit',auth()->user()->id)}}" class="far fa-edit mb-5">Update Profile</a>
@@ -56,10 +54,6 @@ background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 1
                   </div>
                 </div>
               </div>
-            
-
-
-              
 
               <table class="table">
                 <thead>
@@ -74,28 +68,21 @@ background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 1
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach ($enrollments as $data)
+                  @foreach ($enrollments as $key=>$data)
                     
                   <tr>
-                    <th scope="row">1</th>
+                    <th scope="row">{{ $key+1 }}</th>
                     <td>{{ $data->user_id }}</td>
                     <td>{{ $data->course_id }}</td>
-                    <td>{{ $data->enrollmet_date }}</td>
+                    <td>{{ $data->enrollment_date }}</td>
                     <td>{{ $data->amount }}</td>
                     <td>{{ $data->payment_type }}</td>
                     <td>{{ $data->transaction_id }}</td>
                   </tr>
                   @endforeach
 
-
-
-
                 </tbody>
               </table>
-
-
-
-
 
             </div>
           </div>

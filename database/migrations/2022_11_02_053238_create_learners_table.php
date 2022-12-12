@@ -16,13 +16,12 @@ return new class extends Migration
         Schema::create('learners', function (Blueprint $table) {
             $table->id();
             $table->string('name', 200);
-            $table->text('password');
+            $table->text('address');
             $table->text('image', )->nullable();
-            $table->text('dob');
             $table->string('email', 200);
-            $table->text('Mobile');
+            $table->text('mobile');
+            $table->text('date_of_birth');
             $table->string('gender',100);
-            $table->text('mark');
             $table->timestamps();
         });
     }

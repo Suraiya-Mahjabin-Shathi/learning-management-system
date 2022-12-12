@@ -36,6 +36,10 @@
         <div>
             <label for="">Content:</label>
             <textarea class="form-control" name="content"></textarea>
+        </div>
+        <div>
+            <label for="">Price:</label>
+            <input type="text" class="form-control" name="price" >
         </div> <br>
         <div> 
             <button class="btn btn-success">Submit</button>

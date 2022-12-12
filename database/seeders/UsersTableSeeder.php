@@ -24,7 +24,6 @@ class UsersTableSeeder extends Seeder
             'address'=> 'address',
             'designation'=> 'designation',
             
-            
         ]);
     }
 }
