@@ -22,6 +22,7 @@ class UsersTableSeeder extends Seeder
             'password'=> bcrypt('12345'),
             'mobile'=>'01706690057',
             'address'=> 'address',
+            'date_of_birth'=> 'date_of_birth',
             'designation'=> 'designation',
             
         ]);

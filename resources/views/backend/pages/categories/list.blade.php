@@ -35,9 +35,9 @@
     <tbody>
 
 
-      @foreach($cats as $data)
+      @foreach($cats as $key=>$data)
       <tr>
-        <th scope="row">{{ $data->id }}</th>
+        <th scope="row">{{ $key+1 }}</th>
         <td>{{ $data->name }}</td>
         <td>{{ $data->status }}</td>
         <td>

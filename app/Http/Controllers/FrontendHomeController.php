@@ -8,6 +8,7 @@ use App\Models\Course;
 use App\Models\Category;
 use App\Models\Enrollment;
 use App\Models\Instructor;
+use App\Models\Learner;
 use Illuminate\Http\Request;
 
 class FrontendHomeController extends Controller
@@ -16,8 +17,7 @@ class FrontendHomeController extends Controller
 
         $categories=Category::all();
         $courses= Course::all();
-        $instructors=Instructor::all();
-        
+        $instructors=User::where('role','instructor')->get();
      
         return view ('frontend.pages.home', compact('categories','courses','instructors'));
     }
@@ -38,9 +38,9 @@ class FrontendHomeController extends Controller
             'email'=>$request->email,
             'mobile'=>$request->mobile,
             'address'=>$request->address,
+            'date_of_birth'=>$request->date_of_birth,
             'password'=>bcrypt($request->password),
-            'role'=>'learner',
-
+            'role'=>$request->role,
             'image' => $fileName,
 
         ]);  
@@ -64,7 +64,6 @@ class FrontendHomeController extends Controller
         
             notify()->error('invalid password');
             return redirect()->back();
-        
     }
 
     public function userlogout()
@@ -73,14 +72,14 @@ class FrontendHomeController extends Controller
 
         notify()->success('Logout success');
             return redirect()->back();
-
     }
 
     public function profile(){
         if(auth()->user()){
 
+            $students=Enrollment::all();
             $enrollments = Enrollment::where('user_id',auth()->user()->id)->get();
-            return view('frontend.pages.profile',compact('enrollments'));
+            return view('frontend.pages.profile',compact('enrollments',"students"));
         }else{
             return to_route('home');
         }
@@ -104,7 +103,7 @@ class FrontendHomeController extends Controller
             'mobile'=>$request->mobile,
             'address'=>$request->address,
             'password'=>bcrypt($request->password),
-            'role'=>'learner'
+            'role'=>$request->role,
         ]);
 
         notify()->success('User profile updated.');

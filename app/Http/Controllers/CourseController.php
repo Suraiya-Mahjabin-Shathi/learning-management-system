@@ -29,7 +29,7 @@ class CourseController extends Controller
 
         Course::create([
             //database colomn name=>input field name
-            
+            'user_id' => $request->user_id,
             'name' => $request->name,
             'type' => $request->type,
             'image' => $fileName,

@@ -79,10 +79,18 @@ Route::get('/learner/edit/{learner_id}',[LearnerController::class,'editLearner']
 Route::put('/learner/update/{learner_id}',[LearnerController::class,'update'])->name('learner.update');
 
 
-
 Route::get('/enrollment', [EnrollmentController::class, 'list'])->name('enrollment');
 Route::get('/enrollment/create', [EnrollmentController::class, 'create'])->name('enrollment.create');
 Route::post('/enrollment/store', [EnrollmentController::class, 'store'])->name('enrollment.store');
+
+Route::get('/enrollment/delete/{enrollment_id}',[EnrollmentController::class,'deleteEnrollment'])->name('admin.enrollment.delete');
+Route::get('/enrollment/view/{enrollment_id}',[EnrollmentController::class,'viewEnrollment'])->name('admin.enrollment.view');
+
+
+
+
+
+
 
 
 Route::get('/courses', [CourseController::class, 'list'])->name('courses');

@@ -22,9 +22,9 @@
       </tr>
     </thead>
     <tbody>
-      @foreach($cats as $data)
+      @foreach($cats as $key=>$data)
       <tr>
-        <th scope="row"> {{$data->id}}</th>
+        <th scope="row">{{$key+1}}</th>
         <td> {{$data->user_id}}</td>
         <td> {{$data->course_id}}</td>
         <td>{{$data->enrollment_date }}</td>
@@ -33,9 +33,9 @@
         <td>{{$data->payment_type }}</td>
         <td>{{$data->transaction_id }}</td>
         <td>
-            <a href=" " class="btn btn-primary">View</a>
+            <a href="{{route('admin.enrollment.view',$data->id)}} " class="btn btn-primary">View</a>
             <a href=" " class="btn btn-success">Edit</a>
-            <a href=" " class="btn btn-danger">Delete</a>
+            <a href="{{route('admin.enrollment.delete',$data->id)}} " class="btn btn-danger">Delete</a>
         </td>
       </tr>
       @endforeach

@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Learner;
+use App\Models\User;
 
 class LearnerController extends Controller
 {
     public function list(){
 
-        $learn=Learner::paginate(5);
+        $learn=User::where('role','learner')->get();
         //dd($learn);
         return view('backend.pages.learners.list', compact('learn'));
     }
@@ -29,7 +30,7 @@ class LearnerController extends Controller
             $request->file('image')->storeAs('/uploads',$fileName);
         }
         // dd($request->all());
-        Learner::create([
+        User::create([
             'name'=>$request->name,
             'address'=>$request-> address,
             'image'=>$fileName,
@@ -43,7 +44,7 @@ class LearnerController extends Controller
 
     public function deleteLearner(int $learner_id)
     {
-        $test=Learner::find($learner_id);
+        $test=User::find($learner_id);
         if($test){
           $test->delete();
           return redirect()->back()->with('message','learner deleted successfully.');
@@ -54,13 +55,13 @@ class LearnerController extends Controller
     }
     public function viewLearner($learner_id)
     {
-        $learner = Learner::find($learner_id);
+        $learner =User::find($learner_id);
         return view('backend.pages.learners.view', compact('learner'));
     }
 
     public function editLearner($learner_id)
     {
-        $learner=Learner::find($learner_id);
+        $learner=User::find($learner_id);
        
         return view('backend.pages.learners.edit',compact('learner'));
     }
@@ -68,7 +69,7 @@ class LearnerController extends Controller
     public function update(Request $request, $learner_id)
     {
 
-        $learner =Learner::find($learner_id);
+        $learner =User::find($learner_id);
         $fileName = $learner->image;
 
         if ($request->hasFile('image')) {

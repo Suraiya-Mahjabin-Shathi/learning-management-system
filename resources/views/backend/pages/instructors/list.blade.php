@@ -10,9 +10,9 @@
 
 <h1>Instructor List</h1>
 
-<a href="{{ route('instructor.create') }}" class="btn btn-success">Create New Instructor</a>
+<a href="{{ route('instructor.create') }}"></a>
 
-<h5>New Instructor List </h5>
+
 
 <table class="table">
 
@@ -30,9 +30,9 @@
     </thead>
 
     <tbody>
-        @foreach($time as $data)
+        @foreach($time as $key=>$data)
         <tr>
-            <th scope="row">{{$data->id}}</th>
+            <th scope="row">{{$key+1}}</th>
 
             <td>{{$data->name}}</td>
             <td>{{$data->address}}</td>

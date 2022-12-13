@@ -33,6 +33,4 @@ class UserController extends Controller
         Auth::logout();
         return redirect()->back()->with('message','Logout successful.');
     }
-
-
 }

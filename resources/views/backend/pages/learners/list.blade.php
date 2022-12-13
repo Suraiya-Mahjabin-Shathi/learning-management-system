@@ -6,9 +6,9 @@
  
     <h1>This is Learner list.</h1>
 
-  <a href="{{ route('learner.create') }}" class="btn btn-success" >Create New Learner</a>
+  <a href="{{ route('learner.create') }}" ></a>
   
-    <h2>Learner List</h2> 
+  
     
     <table class="table">
       <thead>
@@ -26,9 +26,9 @@
       </thead>
 
       <tbody>
-     @foreach($learn as $data)
+     @foreach($learn as $key=>$data)
         <tr>
-          <th scope="row">{{$data->id}}</th>
+          <th scope="row">{{$key+1}}</th>
           <td>{{$data->name}}</td>
           <td>{{$data->address}}</td>
           <td>
@@ -48,7 +48,7 @@
       </tbody>
     </table>
 
-    {{ $learn->links() }}
+   
 
   </div>
   

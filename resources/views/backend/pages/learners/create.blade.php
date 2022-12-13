@@ -43,8 +43,8 @@
     </div>
     <div> 
         <label for="">Select Gender:</label><br>
-        <input type="radio" name="gender"> Male  <br>
-        <input type="radio" name="gender"> Female <br>
+        <input type="radio" name="gender" value="male"> Male  <br>
+        <input type="radio" name="gender" value="female"> Female <br>
     </div>
     <div> 
        <button class="btn btn-primary">Submit</button>

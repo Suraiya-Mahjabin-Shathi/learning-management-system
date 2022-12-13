@@ -40,6 +40,10 @@ background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 1
                   <hr class="mt-0 mb-4">
                   <div class="row pt-1">
                     <div class="col-12 mb-6">
+                      <h6>Role:</h6>
+                      <p class="text-muted">{{ auth()->user()->role }}</p>
+                    </div> <br><br>
+                    <div class="col-12 mb-6">
                       <h6>Email:</h6>
                       <p class="text-muted">{{ auth()->user()->email }}</p>
                     </div> <br><br>
@@ -55,6 +59,7 @@ background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 1
                 </div>
               </div>
 
+              @if(auth()->user()->role == "learner")
               <table class="table">
                 <thead>
                   <tr>
@@ -83,7 +88,34 @@ background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 1
 
                 </tbody>
               </table>
+              @endif
 
+              @if(auth()->user()->role == "instructor")
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">SL.</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">User ID</th>
+                    <th scope="col">Course ID</th>
+                    <th scope="col">Enrollment Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @foreach ($students as $key=>$data)
+                  
+                  <tr>
+                    <th scope="row">{{ $key+1 }}</th>
+                    <td>{{ $data->name }}</td>
+                    <td>{{ $data->user_id }}</td>
+                    <td>{{ $data->course_id }}</td>
+                    <td>{{ $data->enrollment_date }}</td>
+                  </tr>
+                  @endforeach
+
+                </tbody>
+              </table>
+              @endif
             </div>
           </div>
         </div>

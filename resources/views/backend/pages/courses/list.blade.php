@@ -15,6 +15,7 @@
         <thead>
           <tr>
             <th scope="col">ID</th> 
+            <th scope="col">User ID</th>
             <th scope="col">Course Name</th>
             <th scope="col">Course type</th>
             <th scope="col">Image</th>
@@ -25,9 +26,10 @@
         </thead>
         <tbody>
 
-            @foreach($courses as $data)
+            @foreach($courses as $key=>$data)
           <tr>
-            <th scope="row"> {{ $data->id }}</th>
+            <th scope="row"> {{ $key+1}}</th>
+            <td> {{ $data->user_id }} </td>
             <td> {{ $data->name }} </td>
             <td> {{ $data->type }} </td>
             <td>

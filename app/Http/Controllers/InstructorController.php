@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Instructor;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class InstructorController extends Controller
 {
     public function list(){
-        $time=Instructor::all();
+        $time=User::where('role','instructor')->get();
        // dd($time);
         return view('backend.pages.instructors.list', compact('time'));
     }
@@ -25,7 +26,7 @@ class InstructorController extends Controller
             $request->file('image')->storeAs('/uploads',$fileName);
         }
 
-        Instructor::create([
+        User::create([
             //database column name=>input field name
            'name'=>$request->name,
            'address'=>$request->address,
@@ -34,12 +35,12 @@ class InstructorController extends Controller
            'mobile'=>$request->mobile,
            'date_of_birth'=>$request->date_of_birth,
         ]);
-        return redirect()->route("instructor");
+        return redirect()->route('instructor');
     }
 
     public function deleteInstructor(int $instructor_id)
     {
-        $test=Instructor::find($instructor_id);
+        $test=User::find($instructor_id);
         if($test){
           $test->delete();
           return redirect()->back()->with('message','instructor deleted successfully.');
@@ -48,16 +49,16 @@ class InstructorController extends Controller
           return redirect()->back()->with('error','instructor not found.');
         }
     }
-    
+
     public function viewInstructor($instructor_id)
     {
-      $instructor=Instructor::find($instructor_id);
+      $instructor=User::find($instructor_id);
       return view('backend.pages.instructors.view',compact('instructor'));
     }
 
     public function editInstructor($instructor_id)
     {
-        $instructor=Instructor::find($instructor_id);
+        $instructor=User::find($instructor_id);
        
         return view('backend.pages.instructors.edit',compact('instructor'));
     }
@@ -65,7 +66,7 @@ class InstructorController extends Controller
     public function update(Request $request, $instructor_id)
     {
 
-        $instructor =Instructor::find($instructor_id);
+        $instructor =User::find($instructor_id);
         $fileName = $instructor->image;
 
         if ($request->hasFile('image')) {

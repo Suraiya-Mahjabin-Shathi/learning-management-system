@@ -197,13 +197,21 @@
                 <div class="form-group">
                     <label for="email">Enter Your designation:</label>
                     <input type="text" name="designation" class="form-control" placeholder="Enter your designation" id="designation">
-                  </div>
+                </div>
+                <div class="form-group">
+                  <label for=" role">Enter Your role:</label>
+                  <select name="role" class="form-control" placeholder="Enter your role" id=" role">
+                    <option value="instructor">Instructor</option>
+                    <option value="learner">Learner</option>
+                  </select>
+                </div>
+
                 <div class="form-group">
                   <label for="email">Email address:</label>
                   <input type="email" name="email" class="form-control" placeholder="Enter email" id="email">
                 </div>
                 <div class="form-group">
-                    <label for="email">Phone Number:</label>
+                    <label for="mobile">Phone Number:</label>
                     <input type="text" name="mobile" class="form-control" placeholder="Enter phone number" id="mobile">
                 </div>
                 <div class="form-group">
@@ -211,7 +219,11 @@
                   <input type="password" name="password" class="form-control" placeholder="Enter password" id="pwd">
                 </div>
                 <div class="form-group">
-                    <label for="email">Address:</label>
+                  <label for="date_of_birth">Date of Birth:</label>
+                  <input type="date" name="date_of_birth" class="form-control" placeholder="Enter birth date" id="date_of_birth">
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label>
                     <input type="text" name="address" class="form-control" placeholder="Enter your address" id="address">
                   </div>
                 

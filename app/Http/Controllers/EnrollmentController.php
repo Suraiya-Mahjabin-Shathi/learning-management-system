@@ -34,4 +34,22 @@ class EnrollmentController extends Controller
 
         return redirect()->route("enrollment");
     }
+    public function deleteEnrollment(int $enrollment_id)
+    {
+        $test=Enrollment::find($enrollment_id);
+        if($test){
+          $test->delete();
+          return redirect()->back()->with('message','enrollment deleted successfully.');
+        }
+        else{
+          return redirect()->back()->with('error','enrollment not found.');
+        }
+    }
+    public function viewEnrollment($enrollment_id)
+    {
+      $enrollment=Enrollment::find($enrollment_id);
+      return view('backend.pages.enrollment.view',compact('enrollment'));
+    }
+
+   
 }
