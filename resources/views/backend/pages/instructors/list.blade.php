@@ -8,7 +8,7 @@
 
     
 
-<h1>Instructor List</h1>
+<h1>Instructor List</h1> <br>
 
 <a href="{{ route('instructor.create') }}"></a>
 

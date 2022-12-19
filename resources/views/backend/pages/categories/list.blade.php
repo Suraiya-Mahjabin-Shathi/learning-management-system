@@ -4,7 +4,7 @@
 
 <div class="container mt-3">
 
-  <h1>This is Category List</h1>
+  <h1>This is Category List</h1> <br>
 
 
     @if(session()->has('message'))
@@ -18,7 +18,7 @@
 
   <a href="{{route('Categories.create')}}" class="btn btn-success">Create New Category</a>
 
-  <h4>Category List</h4>  
+   
 
   <table class="table">
     <thead>

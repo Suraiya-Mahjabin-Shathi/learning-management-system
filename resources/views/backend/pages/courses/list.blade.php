@@ -4,12 +4,11 @@
 
 <div class="container mt-3">
 
-  <h1>This is Course List</h1>
+  <h1>This is Course List</h1> <br>
+  
 
   <a href="{{ route(('courses.create')) }}" class="btn btn-success">Create New Course</a>
-
-  <h4>Course List</h4>  
-
+ 
     
     <table class="table">
         <thead>

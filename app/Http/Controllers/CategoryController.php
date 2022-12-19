@@ -22,7 +22,7 @@ class CategoryController extends Controller
 
     public function store(REQUEST $request)
     {
-        //  dd($request->all());
+
         $request->validate([
             "name"=>"required|unique:categories,name"
         ]);

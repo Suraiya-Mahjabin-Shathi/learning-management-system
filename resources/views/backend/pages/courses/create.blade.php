@@ -30,6 +30,9 @@
             <select class="form-control" name="type">
             <option value="designing">Designing</option>
             <option value="technology">Technology</option>
+            <option value="technology">Language</option>
+            <option value="technology">Kid's</option>
+            <option value="technology">Free Course</option>
             </select>
         </div><br>
         <div> 

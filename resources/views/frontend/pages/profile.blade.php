@@ -70,6 +70,7 @@ background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 1
                     <th scope="col">Amount</th>
                     <th scope="col">Payment Type</th>
                     <th scope="col">Transaction ID</th>
+                    <th scope="col">Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -83,6 +84,9 @@ background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 1
                     <td>{{ $data->amount }}</td>
                     <td>{{ $data->payment_type }}</td>
                     <td>{{ $data->transaction_id }}</td>
+                    <td>
+                      <a href="{{route('enrollment.view',$data->id)}}" class="btn btn-primary">View</a>
+                    </td>
                   </tr>
                   @endforeach
 
@@ -95,10 +99,11 @@ background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 1
                 <thead>
                   <tr>
                     <th scope="col">SL.</th>
-                    <th scope="col">Name</th>
+                    {{-- <th scope="col">Name</th> --}}
                     <th scope="col">User ID</th>
                     <th scope="col">Course ID</th>
                     <th scope="col">Enrollment Date</th>
+                    <th scope="col">Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -106,10 +111,13 @@ background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 1
                   
                   <tr>
                     <th scope="row">{{ $key+1 }}</th>
-                    <td>{{ $data->name }}</td>
+                    {{-- <td>{{ $data->name }}</td> --}}
                     <td>{{ $data->user_id }}</td>
                     <td>{{ $data->course_id }}</td>
                     <td>{{ $data->enrollment_date }}</td>
+                    <td>
+                      <a href="  " class="btn btn-primary">View</a>
+                    </td>
                   </tr>
                   @endforeach
 

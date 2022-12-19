@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>This is Enrollment page</h1>
+<h1>This is Enrollment list</h1> <br>
 
 <a href="{{ route('enrollment.create')}}"  class="btn btn-success">Enroll New Course</a>
 

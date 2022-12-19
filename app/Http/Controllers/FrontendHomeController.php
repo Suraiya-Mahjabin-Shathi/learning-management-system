@@ -80,6 +80,8 @@ class FrontendHomeController extends Controller
             $students=Enrollment::all();
             $enrollments = Enrollment::where('user_id',auth()->user()->id)->get();
             return view('frontend.pages.profile',compact('enrollments',"students"));
+    
+
         }else{
             return to_route('home');
         }

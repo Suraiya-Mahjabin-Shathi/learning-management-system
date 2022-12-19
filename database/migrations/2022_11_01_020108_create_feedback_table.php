@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('feedback', function (Blueprint $table) {
             $table->id();
-            $table ->string( column: 'quiz id', length: '50');
-            $table ->string( column: 'feedback', length: '50');
+            $table ->string('user id', '50');
+            $table ->string('course id', '50');
+            $table ->string('details');
             $table->timestamps();
         });
     }

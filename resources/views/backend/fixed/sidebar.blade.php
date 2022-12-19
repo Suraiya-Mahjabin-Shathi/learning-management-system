@@ -54,7 +54,7 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-money-check-dollar"></i></div>
                     Settings
                 </a> --}}
-                <a class="nav-link" href="{{ route('report') }}">
+                <a class="nav-link" href="{{ route('enrollment.report') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-certificate"></i></div>
                     Report
                 </a>
@@ -64,10 +64,10 @@
                 Courses
             </a>
 
-            <a class="nav-link" href="{{ route('quizzes') }}">
+            {{-- <a class="nav-link" href="{{ route('quizzes') }}">
                 <div class="sb-nav-link-icon"><i class="fas fa-pen-to-square"></i></div>
                 Quizzes
-            </a>
+            </a> --}}
 
             <a class="nav-link" href="{{ route('feedback') }}">
                 <div class="sb-nav-link-icon"><i class="fas fa-message"></i></div>
