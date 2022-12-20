@@ -25,6 +25,8 @@ Route::post('/login',[FrontendHomeController::class,'login']) ->name('home.login
 Route::post('/registration',[FrontendHomeController::class,'registration']) ->name('home.registration');
 Route::get('/search',[FrontendHomeController::class,'search'])->name('user.search');
 
+Route::get('/content/{content_id}',[FrontendHomeController::class,'content'])->name('home.content');
+
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/userlogout',[FrontendHomeController::class,'userlogout']) ->name('home.logout');
     Route::get('/profile',[FrontendHomeController::class,'profile'])->name('user.profile');
@@ -32,17 +34,16 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('/profile/update/{profile_id}',[FrontendHomeController::class,'updateProfile'])->name('profile.update');
 });
 
-
 // Course enrollment 
 Route::get('/enrollment-form/{course_id}',[FrontendEnrollmentController::class,'form'])->name('enrollment.form');
 Route::post('/enrollment-form-save/{course_id}',[FrontendEnrollmentController::class,'save'])->name('enrollment.frontend.save');
 
-Route::get('/enrollment/view/{enrollment_id}',[FrontendEnrollmentController::class,'view'])->name('enrollment.view');
-Route::post('/enrollment/store/{enrollment_id}',[FrontendEnrollmentController::class, 'store'])->name('enrollment.store');
+//Feedback
+Route::get('/feedback/view/{enrollment_id}',[FeedbackController::class,'view'])->name('feedback.view');
+Route::post('/feedback/store/{enrollment_id}',[FeedbackController::class, 'store'])->name('feedback.store');
 
 
 //for admin
-
 Route::get('/login',[UserController::class,'login'])->name('login');
 Route::post('/do-login',[UserController::class,'doLogin'])->name('do.login');
 
@@ -93,6 +94,7 @@ Route::get('/courses', [CourseController::class, 'list'])->name('courses');
 Route::get('/courses/create', [CourseController::class, 'create'])->name('courses.create');
 Route::post('/courses/store', [CourseController::class, 'store'])->name('courses.store');
 
+Route::get('/courses/content/{course_id}',[CourseController::class,'content'])->name('admin.course.content');
 Route::get('/courses/delete/{course_id}',[CourseController::class,'deleteCourse'])->name('admin.course.delete');
 Route::get('/courses/view/{course_id}',[CourseController::class,'viewCourse'])->name('admin.course.view');
 Route::get('/course/edit/{course_id}',[CourseController::class,'edit'])->name('admin.course.edit');
@@ -100,6 +102,7 @@ Route::put('/course/update/{course_id}',[CourseController::class,'update'])->nam
 
 
 Route::get('/content', [ContentController::class, 'list'])->name('content');
+
 Route::get('/quizzes', [QuizController::class, 'list'])->name('quizzes');
 Route::get('/feedback', [FeedbackController::class, 'list'])->name('feedback');
 Route::get('/certificate', [CertificateController::class, 'list'])->name('certificate');

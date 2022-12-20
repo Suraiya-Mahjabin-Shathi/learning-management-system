@@ -30,14 +30,5 @@ class FrontendEnrollmentController extends Controller
         return redirect()->route('home');
     }
 
-    public function view($enrollment_id)
-    {
-       
-      $enrollment=Enrollment::find($enrollment_id);
-    //   dd($enrollment);
-      return view('frontend.pages.view',compact('enrollment'));
-    }
-
-   
 
 }

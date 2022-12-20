@@ -120,10 +120,12 @@
                         <img src="{{ url('/uploads/',$data->image) }}" class="card-img-top" alt="image">
                         <div class="card-body">
                           <h5 class="card-title">{{ $data->name }}</h5>
-                          <p class="card-text">{{ $data->content }}</p>
+
+                          <a href="{{ route('home.content',$data->id) }} " class="btn btn-info">Content</a>
+                         
                         </div>
                         <div class="card-body">
-                          <a  href="{{ route('enrollment.form',$data->id) }} " class="btn addBtn form-control" aria-describedby="myBtn">Enroll Now</a>
+                          <a  href="{{ route('enrollment.form',$data->id) }} " class="btn btn-warning form-control" aria-describedby="myBtn">Enroll Now</a>
                         </div>
                     </div>
                 </div>

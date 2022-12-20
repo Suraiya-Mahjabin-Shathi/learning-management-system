@@ -85,7 +85,7 @@ background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 1
                     <td>{{ $data->payment_type }}</td>
                     <td>{{ $data->transaction_id }}</td>
                     <td>
-                      <a href="{{route('enrollment.view',$data->id)}}" class="btn btn-primary">View</a>
+                      <a href="{{route('feedback.view',$data->id)}}" class="btn btn-primary">View</a>
                     </td>
                   </tr>
                   @endforeach

@@ -97,7 +97,7 @@ z-index: 0
 </style>
 
 
-<form action="{{route('enrollment.store')}}" method="post">
+<form action="{{route('feedback.store', $enrollment->id)}}" method="post">
 
     @csrf
 <section class="vh-100 gradient-custom-2">
@@ -135,6 +135,7 @@ z-index: 0
             </div>
             <div class="card-footer p-4">
                 <div>
+                  <input type="hidden" name="course_id" value="{{ $enrollment->course_id }}">
                     <label for="">Give Feedback:</label>
                     <textarea class="form-control" name="description"></textarea>
             </div> <br>

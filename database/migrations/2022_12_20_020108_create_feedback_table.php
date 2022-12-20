@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('feedback', function (Blueprint $table) {
             $table->id();
-            $table ->string('user id', '50');
-            $table ->string('course id', '50');
-            $table ->string('details');
+            $table->foreignId('user_id')->constrained("users");
+            $table->foreignId('course_id')->constrained("courses");
+            $table->foreignId('enrollment_id')->constrained("enrollments");
+            $table->text('feedback')->nullable();
             $table->timestamps();
         });
     }

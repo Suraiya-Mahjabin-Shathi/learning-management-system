@@ -7,7 +7,10 @@
     @csrf
 
     <div style="padding: 20px">    
-    
+        <div> 
+            <label for="">User ID:</label><br>
+            <input type="text" class="form-control" name="user_id" >
+        </div>
     
     <div> 
         <label for="">Enrollment Date:</label><br>

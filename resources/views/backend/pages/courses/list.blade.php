@@ -34,7 +34,10 @@
             <td>
               <img src="{{url('/uploads/',$data->image)}}" height="70" width="70"  alt="course_image">
             </td>
-            <td> {{ $data->content }}</td>
+            <td> 
+              <a href=" {{route('admin.course.content',$data->id)}} " class="btn btn-info">Content</a>
+            
+            </td>
             <td> {{ $data->price }}</td>
             <td>
                 <a href=" {{route('admin.course.view',$data->id)}}" class="btn btn-primary">View</a>

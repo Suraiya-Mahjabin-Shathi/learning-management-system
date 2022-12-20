@@ -80,7 +80,6 @@ class FrontendHomeController extends Controller
             $students=Enrollment::all();
             $enrollments = Enrollment::where('user_id',auth()->user()->id)->get();
             return view('frontend.pages.profile',compact('enrollments',"students"));
-    
 
         }else{
             return to_route('home');
@@ -117,5 +116,11 @@ class FrontendHomeController extends Controller
         $searchResult=Course::where('name','LIKE','%'.$request->search.'%')->get();
 
       return view('frontend.pages.search',compact('searchResult'));
+    }
+
+    public function content($content_id){
+     
+        $content= Course::find($content_id);
+        return view ('frontend.pages.content', compact('content'));
     }
 }

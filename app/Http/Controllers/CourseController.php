@@ -40,6 +40,13 @@ class CourseController extends Controller
         return redirect()->route('courses');
     }
 
+    
+    public function content($course_id)
+    {
+      $course=Course::find($course_id);
+      return view('backend.pages.courses.content',compact('course'));
+    }
+
     public function deleteCourse(int $course_id)
     {
         $test=Course::find($course_id);

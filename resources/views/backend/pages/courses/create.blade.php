@@ -16,11 +16,11 @@
         
         @csrf
 
-        <div style="padding: 20px">    
+        <div style="padding: 20px"> 
             <div> 
                 <label for="">Enter User ID:</label><br>
                 <input type="text" class="form-control" name="user_id" >
-            </div><br>
+            </div><br>   
         <div> 
             <label for="">Enter Course name:</label><br>
             <input type="text" class="form-control" name="name" >

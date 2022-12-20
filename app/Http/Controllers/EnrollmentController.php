@@ -74,10 +74,8 @@ class EnrollmentController extends Controller
         }
 
 
-
        $from=$request->from_date;
        $to=$request->to_date;
-
 
 //       $status=$request->status;
 
