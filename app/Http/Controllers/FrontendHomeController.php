@@ -26,6 +26,16 @@ class FrontendHomeController extends Controller
     public function registration(Request $request)
     {
 
+        $request->validate([
+            "name"=>"required|unique:users,name",
+            "email"=>"required",
+            "mobile"=>"required",
+            "address"=>"required",
+            "role"=>"required",
+            "image"=>"required",
+        ]);
+
+
         $fileName = null;
         if ($request->hasFile('image')) {
             $fileName = date('ymdhmi') . '.' . $request->file('image')->getClientOriginalExtension();

@@ -21,7 +21,7 @@
         
         <div> 
             <label for="">Enter Category name:</label><br>
-            <input type="text" class="form-control" name="name" >
+            <input type="text" class="form-control" name="name" required>
         </div><br>
         <div>
             <label for="">Category Status:</label>
@@ -32,7 +32,7 @@
         </div><br>
         <div> 
             <label for="">Upload image:</label><br>
-            <input type="file"  name="image" >
+            <input type="file"  name="image" required>
         </div><br>
         <div>
             <label for="">Description:</label>

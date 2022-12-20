@@ -18,6 +18,16 @@ class InstructorController extends Controller
     }
 
     public function store(Request $request){
+
+        $request->validate([
+            "name"=>"required|unique:users,name",
+            "address"=>"required",
+            "image"=>"required|unique:categories,image",
+            "email"=>"required",
+            "mobile"=>"required",
+            "date_of_birth"=>"required",
+        ]);
+
        
         $fileName = null;
         if ($request->hasFile('image')) 

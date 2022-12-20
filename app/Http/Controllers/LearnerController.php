@@ -21,6 +21,18 @@ class LearnerController extends Controller
     }
 
     public function store(REQUEST $request){
+
+        
+        $request->validate([
+            "name"=>"required|unique:users,name",
+            "address"=>"required",
+            "image"=>"required|unique:categories,image",
+            "email"=>"required",
+            "mobile"=>"required",
+            "date_of_birth"=>"required",
+            "gender"=>"required"
+        ]);
+
 // dd($request->all());
         $fileName=null;
         if($request->hasFile('image'))

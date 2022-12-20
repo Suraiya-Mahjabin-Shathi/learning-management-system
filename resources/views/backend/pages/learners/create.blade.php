@@ -19,27 +19,27 @@
     
     <div> 
         <label for="">Enter Learner name:</label><br>
-        <input type="text" name="name" >
+        <input type="text" name="name" required>
     </div>
     <div> 
         <label for="">Enter Address:</label><br>
-        <input type="text" name="address">
+        <input type="text" name="address" required>
     </div>
     <div> 
         <label for="">Enter Learner image:</label><br>
-        <input type="file" name="image" >
+        <input type="file" name="image" required>
     </div>
     <div> 
         <label for="">Enter Learner E-mail:</label><br>
-        <input type="email"  placeholder="Enter email" name="email">
+        <input type="email"  placeholder="Enter email" name="email" required>
     </div>
     <div> 
         <label for="">Enter Learner Mobile Number:</label><br>
-        <input type="select"  placeholder="Enter mobile number" name="mobile">
+        <input type="select"  placeholder="Enter mobile number" name="mobile" required>
     </div>
     <div> 
         <label for="">Enter Learner Date of Birth:</label><br>
-        <input type="date" name="date_of_birth">
+        <input type="date" name="date_of_birth" required>
     </div>
     <div> 
         <label for="">Select Gender:</label><br>

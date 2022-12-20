@@ -19,11 +19,11 @@
         <div style="padding: 20px"> 
             <div> 
                 <label for="">Enter User ID:</label><br>
-                <input type="text" class="form-control" name="user_id" >
+                <input type="text" class="form-control" name="user_id" required >
             </div><br>   
         <div> 
             <label for="">Enter Course name:</label><br>
-            <input type="text" class="form-control" name="name" >
+            <input type="text" class="form-control" name="name" required>
         </div><br>
         <div>
             <label for="">Category Type:</label>
@@ -37,7 +37,7 @@
         </div><br>
         <div> 
             <label for="">Upload image:</label><br>
-            <input type="file"  name="image" >
+            <input type="file"  name="image" required>
         </div><br>
         <div>
             <label for="">Content:</label>
@@ -45,7 +45,7 @@
         </div>
         <div>
             <label for="">Price:</label>
-            <input type="text" class="form-control" name="price" >
+            <input type="text" class="form-control" name="price" required>
         </div> <br>
         <div> 
             <button class="btn btn-success">Submit</button>

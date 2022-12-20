@@ -24,7 +24,10 @@ class CategoryController extends Controller
     {
 
         $request->validate([
-            "name"=>"required|unique:categories,name"
+            "name"=>"required|unique:categories,name",
+            "status"=>"required",
+            "image"=>"required|unique:categories,image"
+           
         ]);
          //dd($fileName);
         $fileName = null;

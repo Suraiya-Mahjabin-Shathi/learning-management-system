@@ -12,24 +12,24 @@
     
     <div> 
         <label for="">Enter User ID:</label><br>
-        <input type="text" class="form-control" name="user_id" >
+        <input type="text" class="form-control" name="user_id" required>
     </div>
     <div> 
         <label for="">Enter Course ID:</label><br>
-        <input type="text" class="form-control" name="course_id" >
+        <input type="text" class="form-control" name="course_id" required>
     </div>
     <div> 
         <label for="">Enrollment Date:</label><br>
-        <input type="date" class="form-control" name="enrollment_date" >
+        <input type="date" class="form-control" name="enrollment_date" required>
     </div>
 
     <div> 
         <label for="">Payment Date:</label><br>
-        <input type="date" class="form-control" name="payment_date" >
+        <input type="date" class="form-control" name="payment_date" required>
     </div>
     <div> 
         <label for="">Amount:</label><br>
-        <input type="text" class="form-control" name="amount" >
+        <input type="text" class="form-control" name="amount" required>
     </div>
     <div>
         <label for="">Payment Type:</label>
@@ -41,7 +41,7 @@
     </div>
     <div>
         <label for="">Transaction ID</label>
-        <input type="text" class="form-control" name="transaction_id" >
+        <input type="text" class="form-control" name="transaction_id" required>
     </div><br>
     <div> 
         <button class="btn btn-success">Submit</button>

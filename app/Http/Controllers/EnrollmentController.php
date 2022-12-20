@@ -20,6 +20,8 @@ class EnrollmentController extends Controller
     }
 
     public function store(Request $request){
+
+       
         
         Enrollment::create([
             //database column name=>input field name

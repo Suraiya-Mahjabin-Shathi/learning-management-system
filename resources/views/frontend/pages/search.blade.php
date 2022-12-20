@@ -14,7 +14,7 @@
                     <a class="card-img-tiles" href="#" data-abc="true">
                         <div class="inner">
                             <div class="main-img">
-                                <img src="https://i.imgur.com/O0GMYuw.jpg" alt="Category">
+                                <img src="{{ url("/uploads/",$course->image)  }}" alt="Category">
                             </div>
                         </div>
                     </a>

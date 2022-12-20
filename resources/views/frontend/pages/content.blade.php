@@ -8,7 +8,7 @@
             
 <h2>{{ $content->name }}</h2>
 <h3>{{ $content->type }}</h3>
-<img src="{{ url("/uploads/",$content->image) }}" alt="">
+<img src="{{ url("/uploads/",$content->image) }}"  height="150" width="150" alt="image">
 
 <p>
     {{ $content->content }}

@@ -9,7 +9,7 @@
             
 <h2>{{ $course->name }}</h2>
 <h3>{{ $course->type }}</h3>
-<img src="{{ url("/uploads/",$course->image) }}" alt="">
+<img src="{{ url("/uploads/",$course->image) }}"  height="150" width="150"  alt="image">
 
 <p>
     {{ $course->content }}
