@@ -2,6 +2,9 @@
 
 @section('content')
 
+<div class="container mt-3">
+
+
 <h1>This is Enrollment list</h1> <br>
 
 <a href="{{ route('enrollment.create')}}"  class="btn btn-success">Enroll New Course</a>
@@ -42,5 +45,5 @@
       
     </tbody>
   </table>
-    
+</div>
 @endsection

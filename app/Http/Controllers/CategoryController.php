@@ -10,7 +10,7 @@ class CategoryController extends Controller
 {
     public function list()
     {
-        $cats = Category::paginate(5);
+        $cats = Category::paginate(10);
         //dd($cats);
         return view('backend.pages.categories.list', compact('cats'));
     }

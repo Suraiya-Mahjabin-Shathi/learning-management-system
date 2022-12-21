@@ -63,6 +63,7 @@ body{
 }
 </style>
 
+<div class="container mt-3">
 
 <h1>Single Learner View</h1>
 
@@ -142,6 +143,6 @@ body{
 
         </div>
     </div>
-
+</div>
 
 @endsection

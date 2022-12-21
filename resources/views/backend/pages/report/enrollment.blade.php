@@ -2,6 +2,8 @@
 
 @section('content')
 
+<div class="container mt-3">
+
 <h1>Enrollment Report</h1><br>
 
 <form action="{{route('enrollment.report.search')}}" method="get">
@@ -61,5 +63,5 @@
             document.body.innerHTML = originalContents;
         }
     </script>
-
+</div>
 @endsection

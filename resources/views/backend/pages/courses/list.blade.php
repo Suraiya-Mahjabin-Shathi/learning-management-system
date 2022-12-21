@@ -4,12 +4,21 @@
 
 <div class="container mt-3">
 
-  <h1>This is Course List</h1> <br>
-  
+
+  @if(session()->has('message'))
+  <p class="alert alert-success">{{session()->get('message')}}</p>
+@endif
+
+@if(session()->has('error'))
+  <p class="alert alert-danger">{{session()->get('error')}}</p>
+@endif
+ 
 
   <a href="{{ route(('courses.create')) }}" class="btn btn-success">Create New Course</a>
  
-    
+  <h1>This is Course List</h1> 
+
+  
     <table class="table">
         <thead>
           <tr>

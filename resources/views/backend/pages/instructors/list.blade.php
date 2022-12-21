@@ -37,7 +37,7 @@
             <td>{{$data->name}}</td>
             <td>{{$data->address}}</td>
             <td>
-                <img width="100px" style="border-radius: 10px" src="{{url('/uploads/'.$data->image)}}" alt="instructor's_image">
+                <img width="100px" style="border-radius: 10px" src="{{url('/uploads/'.$data->image)}}" height="50"  width="50" alt="instructor's_image">
               </td>
             <td>{{$data->email}}</td>
             <td>{{$data->mobile}}</td>

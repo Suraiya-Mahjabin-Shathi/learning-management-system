@@ -4,11 +4,9 @@
 
 <div class="container mt-3">
  
-    <h1>This is Learner list.</h1><br>
-
   <a href="{{ route('learner.create') }}" ></a>
   
-  
+  <h1>This is Learner list.</h1><br>
     
     <table class="table">
       <thead>

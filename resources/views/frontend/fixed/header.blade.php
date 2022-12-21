@@ -20,7 +20,7 @@
         <form action="{{ route('user.search')}}">
 
             <div class="input-group">
-                <input type="text" name="search" class="form-control" placeholder="Search for category">
+                <input type="text" name="search" class="form-control" placeholder="Search for course">
                 <button type="submit" class="btn btn-success">Search</button>
             </div>
 
@@ -29,9 +29,9 @@
 
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
-            <a href=" " class="nav-item nav-link">Home</a>
+           
             <a href=" " class="nav-item nav-link">About</a>
-            <a href="" class="nav-item nav-link">Contact</a>
+            <a href=" " class="nav-item nav-link">Contact</a>
 
             @auth
             <a href="{{ route('user.profile') }} " class="nav-item nav-link">{{ auth()->user()->name}}</a>

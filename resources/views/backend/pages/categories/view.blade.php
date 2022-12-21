@@ -107,9 +107,11 @@
     }
 </style>
 
+<div class="container mt-3">
+
 <h1>Single Category View</h1>
 
-<div class="container pt-5">
+<div class="container pt-3">
     <div class="row justify-content-center">
         <div class="card">
             <div class="top-design"></div>
@@ -125,7 +127,7 @@
                     
                 </div>
                 <div class="input-group mb-3 w-75 mx-auto">
-                    <button class="btn addBtn form-control" aria-describedby="myBtn">Back</button>
+                    
                 </div>
                 <div class="bg-b"></div>
             </div>
@@ -133,6 +135,6 @@
         </div>
     </div>
 </div>
-
+</div>
     
 @endsection

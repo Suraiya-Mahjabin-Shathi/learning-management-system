@@ -280,9 +280,9 @@ input[type=text]:placeholder {
     <!-- Tabs Titles -->
 
     <!-- Icon -->
-    <div class="fadeIn first">
-      <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
-    </div>
+    {{-- <div class="fadeIn first">
+      <img src="http://danielzawadzki.com/codepen/01/icon.svg " id="icon" alt="User Icon" />
+    </div> --}}
 
     <!-- Login Form -->
     <form action="{{route('do.login')}}" method="post">
@@ -293,9 +293,9 @@ input[type=text]:placeholder {
     </form>
 
     <!-- Remind Passowrd -->
-    <div id="formFooter">
+    {{-- <div id="formFooter">
       <a class="underlineHover" href="#">Forgot Password?</a>
-    </div>
+    </div> --}}
 
   </div>
 </div>

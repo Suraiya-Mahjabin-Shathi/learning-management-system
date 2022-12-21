@@ -14,6 +14,7 @@
         <p>
           " We have 30+ affordable courses to empower your future."
         </p>
+
       </div>
     </div>
   </div>
@@ -190,15 +191,15 @@
 
                 <div class="form-group">
                     <label for="email">Enter Your Name:</label>
-                    <input type="text" name="name" class="form-control" placeholder="Enter your name" id="name">
+                    <input type="text" name="name" class="form-control" placeholder="Enter your name" id="name" required>
                 </div>
                 <div class="form-group">
                     <label for="image">Enter Your image:</label>
-                    <input type="file" name="image" class="form-control" placeholder="Enter your image" id="image">
+                    <input type="file" name="image" class="form-control" placeholder="Enter your image" id="image" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Enter Your designation:</label>
-                    <input type="text" name="designation" class="form-control" placeholder="Enter your designation" id="designation">
+                    <input type="text" name="designation" class="form-control" placeholder="Enter your designation" id="designation" required>
                 </div>
                 <div class="form-group">
                   <label for=" role">Enter Your role:</label>
@@ -210,23 +211,23 @@
 
                 <div class="form-group">
                   <label for="email">Email address:</label>
-                  <input type="email" name="email" class="form-control" placeholder="Enter email" id="email">
+                  <input type="email" name="email" class="form-control" placeholder="Enter email" id="email" required>
                 </div>
                 <div class="form-group">
                     <label for="mobile">Phone Number:</label>
-                    <input type="text" name="mobile" class="form-control" placeholder="Enter phone number" id="mobile">
+                    <input type="text" name="mobile" class="form-control" placeholder="Enter phone number" id="mobile"   pattern="^\d{11}$" required>
                 </div>
                 <div class="form-group">
                   <label for="pwd">Password:</label>
-                  <input type="password" name="password" class="form-control" placeholder="Enter password" id="pwd">
+                  <input type="password" name="password" class="form-control" placeholder="Enter password" id="pwd" required>
                 </div>
                 <div class="form-group">
                   <label for="date_of_birth">Date of Birth:</label>
-                  <input type="date" name="date_of_birth" class="form-control" placeholder="Enter birth date" id="date_of_birth">
+                  <input type="date" name="date_of_birth" class="form-control" placeholder="Enter birth date" id="date_of_birth" required>
                 </div>
                 <div class="form-group">
                     <label for="address">Address:</label>
-                    <input type="text" name="address" class="form-control" placeholder="Enter your address" id="address">
+                    <input type="text" name="address" class="form-control" placeholder="Enter your address" id="address" required>
                   </div>
                 
                 <button type="submit" class="btn btn-primary">Submit</button>

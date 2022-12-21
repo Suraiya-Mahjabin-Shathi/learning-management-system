@@ -28,9 +28,9 @@
     <div>
         <label for="">Payment Type:</label>
         <select class="form-control" name="payment_type">
-        <option value="Bkash">Bkash</option>
-        <option value="Nogod">Nogod</option>
-        <option value="Roket">Roket</option>
+        <option value="Bkash">Bkash-01700000000</option>
+        <option value="Nogod">Nogod-01620000000</option>
+        <option value="Roket">Roket-01430000000</option>
         </select>
     </div>
     <div>
