@@ -2,6 +2,8 @@
 
 @section('content')
 
+<div class="container mt-3">
+
 <h3>Here is the Category Form:- </h3>
 
 
@@ -45,6 +47,6 @@
     
     </form>
     </div> 
-
+</div>
     
 @endsection

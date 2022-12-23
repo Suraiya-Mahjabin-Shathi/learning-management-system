@@ -2,6 +2,8 @@
 
 @section('content')
 
+<div class="container mt-3">
+
 <h4>Instructor Form:</h4>
 
 <form action="{{ route('instructor.store') }}" method="post" enctype="multipart/form-data" >
@@ -35,7 +37,7 @@
     </div>
     <div>
         <label for=" ">Instructor's Mobile Number:</label><br>
-        <input type="text" class="form-control" name="mobile" required>
+        <input type="text" class="form-control" name="mobile" required|numeric|digits:11>
     </div>
     <div>
         <label for=" ">Date of Birth:</label><br>
@@ -45,6 +47,6 @@
     <button class="btn btn-success">Submit</button>
   </div>
 </form>
-
+</div>
 
 @endsection

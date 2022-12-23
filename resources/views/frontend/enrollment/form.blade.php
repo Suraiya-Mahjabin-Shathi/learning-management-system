@@ -8,8 +8,8 @@
 
     <div style="padding: 20px">    
         <div> 
-            <label for="">User ID:</label><br>
-            <input type="text" class="form-control" name="user_id" required>
+            <label for="">Instructor ID:</label><br>
+            <input value="{{ $course->user_id }}" type="text" class="form-control" name="user_id" required>
         </div>
     
     <div> 
@@ -23,7 +23,7 @@
     </div>
     <div> 
         <label for="">Amount:</label><br>
-        <input type="text" class="form-control" name="amount" required>
+        <input value="{{ $course->price }}"type="text" class="form-control" name="amount" required>
     </div>
     <div>
         <label for="">Payment Type:</label>
@@ -36,10 +36,17 @@
     <div>
         <label for="">Transaction ID</label>
         <input type="text" class="form-control" name="transaction_id" required>
-    </div><br>
+    </div>
+    <div>
+        <label for="status"> Status:</label>
+        <select type="text" class="form-control" name="status">
+        <option value="pending">pending</option>
+        </select>
+    </div>
     <div> 
         <button class="btn btn-success">Submit</button>
-     </div><br>
+     </div>
+    </div>
 </form>
 
 @endsection

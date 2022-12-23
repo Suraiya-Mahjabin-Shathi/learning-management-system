@@ -2,6 +2,8 @@
 
 @section('content')
 
+<div class="container mt-3">
+
 <h1>Feedback list</h1> <br>
 
 
@@ -28,5 +30,5 @@
       
     </tbody>
   </table>
-    
+</div>
 @endsection

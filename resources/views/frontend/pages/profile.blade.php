@@ -64,7 +64,7 @@ background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 1
                 <thead>
                   <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">User ID</th>
+                    <th scope="col">Learner ID</th>
                     <th scope="col">Course ID</th>
                     <th scope="col">Enrollment Date</th>
                     <th scope="col">Amount</th>
@@ -100,7 +100,8 @@ background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 1
                   <tr>
                     <th scope="col">SL.</th>
                     {{-- <th scope="col">Name</th> --}}
-                    <th scope="col">User ID</th>
+                    <th scope="col">Learner ID</th>
+                    <th scope="col">Learner Name</th>
                     <th scope="col">Course ID</th>
                     <th scope="col">Enrollment Date</th>
                     <th scope="col">Action</th>
@@ -113,6 +114,7 @@ background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 1
                     <th scope="row">{{ $key+1 }}</th>
                     {{-- <td>{{ $data->name }}</td> --}}
                     <td>{{ $data->user_id }}</td>
+                    <td>{{ $data->name }}</td>
                     <td>{{ $data->course_id }}</td>
                     <td>{{ $data->enrollment_date }}</td>
                     <td>

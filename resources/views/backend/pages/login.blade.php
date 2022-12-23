@@ -280,15 +280,15 @@ input[type=text]:placeholder {
     <!-- Tabs Titles -->
 
     <!-- Icon -->
-    {{-- <div class="fadeIn first">
-      <img src="http://danielzawadzki.com/codepen/01/icon.svg " id="icon" alt="User Icon" />
-    </div> --}}
+    <div class="fadeIn first">
+      <img src="{{url('/uploads/admin.png.png')}}" height="200" width="10" id="icon" alt="User Icon" />
+    </div>  
 
     <!-- Login Form -->
     <form action="{{route('do.login')}}" method="post">
         @csrf
-      <input type="text" id="email"  class="fadeIn second" class="form-control"  name="email" placeholder="Enter e-mail">
-      <input type="password" id="password" class="fadeIn third" class="form-control"  name="password" placeholder="Enter password">
+      <input type="text" id="email"  class="fadeIn second" class="form-control"  name="email" placeholder="Enter e-mail" required>
+      <input type="password" id="password" class="fadeIn third" class="form-control"  name="password" placeholder="Enter password" required>
       <input type="submit" class="fadeIn fourth" value="Log In">
     </form>
 

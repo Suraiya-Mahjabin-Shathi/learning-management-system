@@ -21,7 +21,16 @@ class EnrollmentController extends Controller
 
     public function store(Request $request){
 
-       
+        // $request->validate([
+        //     "user_id"=>"required",
+        //     "course_id"=>"required",
+        //     "enrollment_date"=>"required",
+        //     "payment_date"=>"required",
+        //     "amount"=>"required",
+        //     "payment_type"=>"required",
+        //     "transaction_id"=>"required",
+           
+        // ]);
         
         Enrollment::create([
             //database column name=>input field name
@@ -33,32 +42,38 @@ class EnrollmentController extends Controller
             'amount'=> $request->amount,
             'payment_type'=> $request->payment_type,
             'transaction_id'=> $request->transaction_id,
+            'status'=> $request->status,
         ]);
 
         return redirect()->route("enrollment");
     }
-    public function deleteEnrollment(int $enrollment_id)
-    {
-        $test=Enrollment::find($enrollment_id);
-        if($test){
-          $test->delete();
-          return redirect()->back()->with('message','enrollment deleted successfully.');
-        }
-        else{
-          return redirect()->back()->with('error','enrollment not found.');
-        }
-    }
-    public function viewEnrollment($enrollment_id)
+
+    public function acceptEnrollment(Request $request, $enrollment_id)
     {
       $enrollment=Enrollment::find($enrollment_id);
-      return view('backend.pages.enrollment.view',compact('enrollment'));
+      $enrollment->update([
+        'status'=>'accept'
+      ]);
+      return redirect()->route('enrollment')->with('message','accepted successfully');
     }
+
+    public function rejectEnrollment(Request $request, $enrollment_id)
+    {
+      $enrollment=Enrollment::find($enrollment_id);
+      $enrollment->update([
+        'status'=>'reject'
+      ]);
+      return redirect()->route('enrollment')->with('message','rejected successfully');
+    }
+
+    
+
+
 
     public function report()
     {
         return view('backend.pages.report.enrollment');
     }
-
 
     public function reportSearch(Request $request)
     {

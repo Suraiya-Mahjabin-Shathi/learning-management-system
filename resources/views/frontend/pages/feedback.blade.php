@@ -97,6 +97,7 @@ z-index: 0
 </style>
 
 
+
 <form action="{{route('feedback.store', $enrollment->id)}}" method="post">
 
     @csrf
@@ -126,10 +127,7 @@ z-index: 0
                   <h5 class="bold">Transaction ID:{{ $enrollment->transaction_id }} </h5>
 
                 </div>
-                <div>
-                  <img class="align-self-center img-fluid"
-                    src=" " width="250">
-                </div>
+                
               </div>
               
             </div>
@@ -151,6 +149,7 @@ z-index: 0
     </div>
   </section>
 
+</div>
 
 
   @endsection

@@ -6,13 +6,18 @@
 
 <div class="container mt-3">
 
-    
-
 <h1>Instructor List</h1> <br>
 
+
+@if(session()->has('message'))
+<p class="alert alert-success">{{session()->get('message')}}</p>
+@endif
+
+@if(session()->has('error'))
+<p class="alert alert-danger">{{session()->get('error')}}</p>
+@endif
+
 <a href="{{ route('instructor.create') }}"></a>
-
-
 
 <table class="table">
 
@@ -54,10 +59,8 @@
          @endforeach
         
     </tbody>
-
-
 </table>
-
+</div>
 
 
 @endsection

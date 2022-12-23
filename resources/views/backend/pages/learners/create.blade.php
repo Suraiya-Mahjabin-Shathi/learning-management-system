@@ -2,6 +2,8 @@
 
 @section('content')
 
+<div class="container mt-3">
+    
 <h4>New Learner Create</h4>
 
   <form action="{{ route('learner.store')  }}" method="post" enctype="multipart/form-data">
@@ -35,11 +37,11 @@
     </div>
     <div> 
         <label for="">Enter Learner Mobile Number:</label><br>
-        <input type="select"  placeholder="Enter mobile number" name="mobile" required>
+        <input type="select"  placeholder="Enter mobile number" name="mobile" required|numeric|digits:11>
     </div>
     <div> 
         <label for="">Enter Learner Date of Birth:</label><br>
-        <input type="date" name="date_of_birth" required>
+        <input type="date" placeholder="Enter DOB" name="date_of_birth" required>
     </div>
     <div> 
         <label for="">Select Gender:</label><br>
@@ -49,7 +51,6 @@
     <div> 
        <button class="btn btn-primary">Submit</button>
     </div>
-
 
 </form>
 </div> 

@@ -18,12 +18,11 @@
  
   <h1>This is Course List</h1> 
 
-  
     <table class="table">
         <thead>
           <tr>
             <th scope="col">ID</th> 
-            <th scope="col">User ID</th>
+            <th scope="col">Instructor ID</th>
             <th scope="col">Course Name</th>
             <th scope="col">Course type</th>
             <th scope="col">Image</th>
@@ -59,5 +58,5 @@
           
         </tbody>
   </table>
-
+</div>
 @endsection

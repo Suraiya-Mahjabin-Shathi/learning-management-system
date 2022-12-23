@@ -22,9 +22,9 @@ class InstructorController extends Controller
         $request->validate([
             "name"=>"required|unique:users,name",
             "address"=>"required",
-            "image"=>"required|unique:categories,image",
-            "email"=>"required",
-            "mobile"=>"required",
+            "image"=>"required|unique:users,image",
+            "email"=>"required|unique:users,image",
+            "mobile"=>"required|numeric|digits:11",
             "date_of_birth"=>"required",
         ]);
 
@@ -38,11 +38,13 @@ class InstructorController extends Controller
 
         User::create([
             //database column name=>input field name
+           
            'name'=>$request->name,
            'address'=>$request->address,
            'image'=>$fileName,
            'email'=>$request->email,
            'mobile'=>$request->mobile,
+           'gender'=>$request->gender, 
            'date_of_birth'=>$request->date_of_birth,
         ]);
         return redirect()->route('instructor');
@@ -92,6 +94,7 @@ class InstructorController extends Controller
             'image'=>$fileName,
             'email'=>$request->email,
             'mobile'=>$request->mobile,
+            'gender'=>$request->gender, 
             'date_of_birth'=>$request->date_of_birth
         ]);
         return redirect()->route('instructor')->with('message', 'Update success.');

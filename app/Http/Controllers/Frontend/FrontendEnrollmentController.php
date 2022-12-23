@@ -16,6 +16,17 @@ class FrontendEnrollmentController extends Controller
     public function save(Request $request,$course_id){
         $course = Course::find($course_id);
 
+        // $request->validate([
+        //     "user_id"=>"required|",
+        //     "course_id"=>"required",
+        //     "enrollment_date"=>"required",
+        //     "payment_date"=>"required",
+        //     "amount"=>"required",
+        //     "payment_type"=>"required",
+        //     "transaction_id"=>"required",
+           
+        // ]);
+
         Enrollment::create([
             //database column name=>input field name
 
@@ -26,6 +37,7 @@ class FrontendEnrollmentController extends Controller
             'amount'=> $request->amount,
             'payment_type'=> $request->payment_type,
             'transaction_id'=> $request->transaction_id,
+            'status'=> $request->status,
         ]);
         return redirect()->route('home');
     }

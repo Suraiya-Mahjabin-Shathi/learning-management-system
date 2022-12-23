@@ -2,9 +2,11 @@
 
 @section('content')
 
+<div class="container mt-3">
+
 <h3>Update Category Form:- </h3>
 
-   <form action="{{route('Categories.update', $category->id)}} " method="post" enctype="multipart/form-data">
+    <form action="{{route('Categories.update', $category->id)}} " method="post" enctype="multipart/form-data">
         
         @method('put')
 
@@ -46,11 +48,8 @@
             </div> <br>
 
             
-                <button type="submit" class="btn btn-success">Update</button>
-             
-        
-        
-        </form>
-        </div> 
-    
+            <button type="submit" class="btn btn-success">Update</button>
+        </div>
+    </form>
+</div>
 @endsection

@@ -14,7 +14,7 @@
             <a href=" " class="dropdown-item">Kid's Course</a>
             <a href=" " class="dropdown-item">Free Course</a>
         </div>
-    </div>
+    </div> 
 
     <div class=" col-lg-6 col-6 text-left">
         <form action="{{ route('user.search')}}">
@@ -29,9 +29,9 @@
 
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
-           
+          
             <a href=" " class="nav-item nav-link">About</a>
-            <a href=" " class="nav-item nav-link">Contact</a>
+            <a href=" " class="nav-item nav-link">Contact</a> 
 
             @auth
             <a href="{{ route('user.profile') }} " class="nav-item nav-link">{{ auth()->user()->name}}</a>

@@ -51,7 +51,6 @@
         </table>
     </div>
     <button onclick="printDiv('enrollmentReport')" class="btn btn-success">Print</button>
-    <br><br><br><br><br><br><br>
     
     
     <script>

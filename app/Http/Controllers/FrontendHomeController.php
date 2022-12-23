@@ -26,15 +26,13 @@ class FrontendHomeController extends Controller
     public function registration(Request $request)
     {
 
-        $request->validate([
-            "name"=>"required|unique:users,name",
-            "email"=>"required",
-            "mobile"=>"required",
-            "address"=>"required",
-            "role"=>"required",
-            "image"=>"required",
-        ]);
-
+         $request->validate([
+               "name"=>"required",
+               "email"=>"required|unique:users,email",
+               "mobile"=>"required|numeric|digits:11",
+               "password"=>"required|min:5",
+               "date_of_birth"=>"required",   
+         ]);
 
         $fileName = null;
         if ($request->hasFile('image')) {
@@ -43,15 +41,17 @@ class FrontendHomeController extends Controller
         }
 
         User::create([
-            'name'=>$request->name,
+            
+            'name'=>$request->name, 
+            'image' => $fileName,
             'designation'=>$request->designation,
+            'role'=>$request->role,
             'email'=>$request->email,
             'mobile'=>$request->mobile,
-            'address'=>$request->address,
-            'date_of_birth'=>$request->date_of_birth,
+            'gender'=>$request->gender,
             'password'=>bcrypt($request->password),
-            'role'=>$request->role,
-            'image' => $fileName,
+            'date_of_birth'=>$request->date_of_birth,
+            'address'=>$request->address,
 
         ]);  
         notify()->success('registration successful');

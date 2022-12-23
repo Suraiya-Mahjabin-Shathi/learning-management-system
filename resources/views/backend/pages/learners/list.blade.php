@@ -3,9 +3,19 @@
 @section('content')
 
 <div class="container mt-3">
- 
-  <a href="{{ route('learner.create') }}" ></a>
   
+  @if(session()->has('message'))
+  <p class="alert alert-success">{{session()->get('message')}}</p>
+  @endif
+
+  @if(session()->has('error'))
+  <p class="alert alert-danger">{{session()->get('error')}}</p>
+  @endif
+
+  <a href="{{ route('learner.create') }}" ></a>
+
+ 
+
   <h1>This is Learner list.</h1><br>
     
     <table class="table">
@@ -18,7 +28,7 @@
           <th scope="col">Email</th>
           <th scope="col">Mobile</th>
           <th scope="col">Date of Birth</th>
-          <th scope="col">Gender</th>
+          <th scope="col">Gender</th> 
           <th scope="col">Action</th>
         </tr>
       </thead>
@@ -38,19 +48,14 @@
           <td>{{$data->gender}}</td>
           <td>
             <a href="{{route('admin.learner.view',$data->id)}}" class="btn btn-primary">View</a>
-            <a href="{{route('admin.learner.edit',$data->id)}}" class="btn btn-success">Edit</a>
+            <a href="{{route('admin.learner.edit',$data->id)}}" class="btn btn-success">Edit</a> 
             <a href="{{route('admin.learner.delete',$data->id)}}" class="btn btn-danger">Delete</a>
           </td>          
         </tr>
        @endforeach
       </tbody>
     </table>
-
-   
-
   </div>
   
-  </body>
-  </html>
 
 @endsection

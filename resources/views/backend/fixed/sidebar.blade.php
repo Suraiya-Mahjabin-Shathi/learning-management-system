@@ -34,48 +34,25 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-book"></i></div>
                     Courses
                 </a>
-                
-                {{-- <a class="nav-link" href="{{ route('quizzes') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-pen-to-square"></i></div>
-                    Quizzes
-                </a>
 
                 <a class="nav-link" href="{{ route('feedback') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-message"></i></div>
                     Feedback
                 </a>
                 
-                <a class="nav-link" href="{{ route('certificate') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-certificate"></i></div>
-                    Certificates
-                </a>
-               
-                <a class="nav-link" href="{{ route('settings') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-money-check-dollar"></i></div>
-                    Settings
-                </a> --}}
                 <a class="nav-link" href="{{ route('enrollment.report') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-certificate"></i></div>
                     Report
                 </a>
             @else
+
             <a class="nav-link" href="{{ route('courses') }}">
                 <div class="sb-nav-link-icon"><i class="fas fa-book"></i></div>
                 Courses
             </a>
-
-            {{-- <a class="nav-link" href="{{ route('quizzes') }}">
-                <div class="sb-nav-link-icon"><i class="fas fa-pen-to-square"></i></div>
-                Quizzes
-            </a> --}}
-
             <a class="nav-link" href="{{ route('feedback') }}">
                 <div class="sb-nav-link-icon"><i class="fas fa-message"></i></div>
                 Feedback
-            </a>
-            <a class="nav-link" href="{{ route('certificate') }}">
-                <div class="sb-nav-link-icon"><i class="fas fa-certificate"></i></div>
-                Certificates
             </a>
             @endif
 

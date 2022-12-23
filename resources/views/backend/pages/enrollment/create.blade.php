@@ -2,6 +2,8 @@
 
 @section('content')
 
+<div class="container mt-3">
+
 <h1>Enrollment Form:-</h1>
 
 <form action=" {{ route('enrollment.store') }} " method="POST" enctype="multipart/form-data">
@@ -42,6 +44,10 @@
     <div>
         <label for="">Transaction ID</label>
         <input type="text" class="form-control" name="transaction_id" required>
+    </div><br>
+    <div>
+        <label for="">Status</label>
+        <input type="text" class="form-control" name="status" required>
     </div><br>
     <div> 
         <button class="btn btn-success">Submit</button>

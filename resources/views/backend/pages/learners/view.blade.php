@@ -3,8 +3,6 @@
 @section('content')
     
 
-
-
 <style type="text/css">
 
 

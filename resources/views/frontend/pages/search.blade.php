@@ -20,7 +20,8 @@
                     </a>
                     <div class="card-body text-center">
                         <h4 class="card-title">{{$course->name}}</h4>
-                        <p class="text-muted">{{$course->price}}</p><a class="btn btn-outline-primary btn-sm" href="#" data-abc="true">View Course</a>
+                        <p class="text-muted">{{$course->price}}</p>
+                        <a class="btn btn-outline-primary btn-sm" href=" #" data-abc="true">enroll</a>
                     </div>
                 </div>
             </div>

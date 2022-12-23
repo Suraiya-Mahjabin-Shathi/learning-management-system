@@ -2,6 +2,8 @@
 
 @section('content')
 
+<div class="container mt-3">
+
 <h3>Here is the Course Form:- </h3>
 
 
@@ -18,13 +20,13 @@
 
         <div style="padding: 20px"> 
             <div> 
-                <label for="">Enter User ID:</label><br>
-                <input type="text" class="form-control" name="user_id" required >
-            </div><br>   
+                <label for="">Enter Instructor ID:</label><br>  
+                <input type="text" class="form-control" name="user_id" required>
+            </div>
         <div> 
             <label for="">Enter Course name:</label><br>
             <input type="text" class="form-control" name="name" required>
-        </div><br>
+        </div>
         <div>
             <label for="">Category Type:</label>
             <select class="form-control" name="type">
@@ -34,11 +36,11 @@
             <option value="technology">Kid's</option>
             <option value="technology">Free Course</option>
             </select>
-        </div><br>
+        </div>
         <div> 
             <label for="">Upload image:</label><br>
             <input type="file"  name="image" required>
-        </div><br>
+        </div>
         <div>
             <label for="">Content:</label>
             <textarea class="form-control" name="content"></textarea>
@@ -46,14 +48,11 @@
         <div>
             <label for="">Price:</label>
             <input type="text" class="form-control" name="price" required>
-        </div> <br>
+        </div>
         <div> 
             <button class="btn btn-success">Submit</button>
-         </div><br>
-    
-    
+         </div>
     </form>
-    </div> 
+</div> 
 
-    
 @endsection

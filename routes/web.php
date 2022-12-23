@@ -85,8 +85,9 @@ Route::get('/enrollment', [EnrollmentController::class, 'list'])->name('enrollme
 Route::get('/enrollment/create', [EnrollmentController::class, 'create'])->name('enrollment.create');
 Route::post('/enrollment/store', [EnrollmentController::class, 'store'])->name('enrollment.store');
 
-Route::get('/enrollment/delete/{enrollment_id}',[EnrollmentController::class,'deleteEnrollment'])->name('admin.enrollment.delete');
-Route::get('/enrollment/view/{enrollment_id}',[EnrollmentController::class,'viewEnrollment'])->name('admin.enrollment.view');
+Route::get('/enrollment/accept/{enrollment_id}',[EnrollmentController::class,'acceptEnrollment'])->name('admin.enrollment.accept');
+Route::get('/enrollment/reject/{enrollment_id}',[EnrollmentController::class,'rejectEnrollment'])->name('admin.enrollment.reject');
+
 
 
 

@@ -26,12 +26,12 @@ class LearnerController extends Controller
         $request->validate([
             "name"=>"required|unique:users,name",
             "address"=>"required",
-            "image"=>"required|unique:categories,image",
-            "email"=>"required",
-            "mobile"=>"required",
+            "image"=>"required",
+            "email"=>"required|unique:users,email",
+            "mobile"=>"required|numeric|digits:11",
             "date_of_birth"=>"required",
             "gender"=>"required"
-        ]);
+         ]);
 
 // dd($request->all());
         $fileName=null;

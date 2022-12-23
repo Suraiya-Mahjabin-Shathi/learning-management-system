@@ -3,11 +3,12 @@
 @section('content')
     
 
-<>
+
 <section>
   <div class="banner" style="height:500px; background-image: url('http://localhost/learning-management-system/public/uploads/front3.jpg')">
     <div class="container">
       <div class="banner-content">
+
         <h1>
           "What do you want to learn?"
         </h1>
@@ -66,6 +67,8 @@
 </div>
 <!-- Service End -->
 
+    
+
 
     <!-- Category Start -->
     <div class="container-xxl py-5">
@@ -97,10 +100,8 @@
             </div>
           </div>    
         </div>
-  <!-- Courses End -->
+  <!-- Categories End -->
   
-
-
 
 
     <!-- Courses Start -->
@@ -152,7 +153,8 @@
                         <img src="{{ url('/uploads/',$data->image) }}" class="card-img-top" alt=" image">
                         <div class="card-body">
                         <h5 class="card-title">{{ $data->name }}</h5>
-                        <p class="card-text">{{ $data->content }}</p>
+                        <h5 class="card-title">{{ $data->designation }}</h5>
+                        <h5 class="card-title">{{ $data->email }}</h5>
                         </div>
                         
                     </div>
@@ -167,8 +169,6 @@
     
     
     <!-- Button trigger modal -->
-
-  
 
 
   
@@ -215,7 +215,7 @@
                 </div>
                 <div class="form-group">
                     <label for="mobile">Phone Number:</label>
-                    <input type="text" name="mobile" class="form-control" placeholder="Enter phone number" id="mobile"   pattern="^\d{11}$" required>
+                    <input type="text" name="mobile" class="form-control" placeholder="11234567853" id="mobile"  required|numeric|digits:11>
                 </div>
                 <div class="form-group">
                   <label for="pwd">Password:</label>
@@ -225,11 +225,16 @@
                   <label for="date_of_birth">Date of Birth:</label>
                   <input type="date" name="date_of_birth" class="form-control" placeholder="Enter birth date" id="date_of_birth" required>
                 </div>
+                <div> 
+                  <label for="">Select Gender:</label><br>
+                  <input type="radio" name="gender" value="male"> Male  <br>
+                  <input type="radio" name="gender" value="female"> Female <br>
+              </div>
                 <div class="form-group">
                     <label for="address">Address:</label>
                     <input type="text" name="address" class="form-control" placeholder="Enter your address" id="address" required>
-                  </div>
-                
+                </div>
+        
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
               

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('payment_date');
             $table->string('payment_type');
             $table->text('transaction_id');
+            $table->text('status');
             $table->timestamps();
         });
     }

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained("users");
             $table->foreignId('course_id')->constrained("courses");
-            $table->foreignId('enrollment_id')->constrained("enrollments");
+            // $table->foreignId('enrollment_id')->constrained("enrollments");
             $table->text('feedback')->nullable();
             $table->timestamps();
         });

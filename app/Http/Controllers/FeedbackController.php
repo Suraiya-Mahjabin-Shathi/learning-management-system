@@ -25,9 +25,9 @@ class FeedbackController extends Controller
     public function store(Request $request, $enrollment_id)
     {
 
-      $request->validate([
-        "feedback"=>"required",
-    ]);
+    //   $request->validate([
+    //     "feedback"=>"required",
+    // ]);
     
         // dd($request->all());
         Feedback::create([
