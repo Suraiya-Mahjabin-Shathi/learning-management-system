@@ -19,6 +19,7 @@
             <input name="to_date" type="date" class="form-control">
         </div>
         <div class="col-md-4">
+            <br>
             <button type="submit" class="btn btn-success">Search</button>
         </div>
     </div>
@@ -31,7 +32,9 @@
             <thead>
             <tr>
                 <th scope="col">#</th>
+                <th scope="col">User Name</th>
                 <th scope="col">User ID</th>
+                
                 <th scope="col">Course ID</th>
                 <th scope="col">Order Date</th>
             </tr>
@@ -41,7 +44,9 @@
             @foreach($enrollment as $key=>$enrollment)
             <tr>
                 <td>{{$key+1}}</td>
+                <td>{{$enrollment->user->name}}</td>
                 <td>{{$enrollment->user_id}}</td>
+               
                 <td>{{$enrollment->course_id}}</td>
                 <td>{{$enrollment->created_at}}</td>
             </tr>

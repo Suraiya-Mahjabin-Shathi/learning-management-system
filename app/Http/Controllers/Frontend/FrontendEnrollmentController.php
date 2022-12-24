@@ -16,6 +16,14 @@ class FrontendEnrollmentController extends Controller
     public function save(Request $request,$course_id){
         $course = Course::find($course_id);
 
+        // course_id
+        // user_id
+        $enroll = Enrollment::where("course_id",$course_id)->where("user_id", auth()->user()->id)->get();
+        
+        if($enroll){
+            notify()->warning("Already Enrolled");
+            return to_route("home");
+        }
         // $request->validate([
         //     "user_id"=>"required|",
         //     "course_id"=>"required",

@@ -19,9 +19,25 @@
         @csrf
 
         <div style="padding: 20px"> 
+            <div>
+                <label for="">From date:</label>
+                <input type="date"  name="from_date" class="form-control">
+            </div>
+            <div>
+                <label for="">To date:</label>
+                <input type="date" name="to_date"  class="form-control">
+            </div>
             <div> 
-                <label for="">Enter Instructor ID:</label><br>  
-                <input type="text" class="form-control" name="user_id" required>
+                <label for="">Capacity:</label><br>  
+                <input type="number" class="form-control" name="capacity" required min="1">
+            </div>
+            <div> 
+                <label for="">Select Instructor</label><br>  
+                <select name="user_id" id="" class="form-control">
+                    @foreach ($instructor as $data )
+                    <option value="{{ $data->id }}">{{ $data->name }}</option>
+                    @endforeach
+                </select>
             </div>
         <div> 
             <label for="">Enter Course name:</label><br>
@@ -47,8 +63,9 @@
         </div>
         <div>
             <label for="">Price:</label>
-            <input type="text" class="form-control" name="price" required>
+            <input type="number" class="form-control" name="price" required>
         </div>
+
         <div> 
             <button class="btn btn-success">Submit</button>
          </div>

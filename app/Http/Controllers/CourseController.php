@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
@@ -14,10 +15,12 @@ class CourseController extends Controller
     }
 
     public function create(){
-        return view('backend.pages.courses.create');
+
+        $instructor = User::where("role","instructor")->get();
+        return view('backend.pages.courses.create',compact("instructor"));
     }
 
-    public function store(REQUEST $request)
+    public function store(Request $request)
     {
 
         // $request->validate([
@@ -36,6 +39,9 @@ class CourseController extends Controller
 
         Course::create([
             //database colomn name=>input field name
+            'from_date'=>$request->from_date,
+            'to_date'=>$request->to_date,
+            'capacity'=>$request->capacity,
             'user_id' => $request->user_id,
             'name' => $request->name,
             'type' => $request->type,

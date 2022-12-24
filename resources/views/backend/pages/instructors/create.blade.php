@@ -43,6 +43,11 @@
         <label for=" ">Date of Birth:</label><br>
         <input type="date" class="form-control" name="date_of_birth" required>
     </div>
+    <div> 
+        <label for="">Select Gender:</label><br>
+        <input type="radio" name="gender" value="male"> Male  <br>
+        <input type="radio" name="gender" value="female"> Female <br>
+    </div>
    
     <button class="btn btn-success">Submit</button>
   </div>

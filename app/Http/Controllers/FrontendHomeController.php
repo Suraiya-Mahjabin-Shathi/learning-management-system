@@ -15,7 +15,7 @@ class FrontendHomeController extends Controller
 {
     public function home(){
 
-        $categories=Category::all();
+        $categories=Category::where("status","active")->get();
         $courses= Course::all();
         $instructors=User::where('role','instructor')->get();
      
@@ -68,7 +68,7 @@ class FrontendHomeController extends Controller
          $credentials=$request->except('_token');
         if(auth()->attempt($credentials))
         {
-            notify()->success('Login success');
+            notify()->success("Login success as ". auth()->user()->role);
             return redirect()->back();
         }
         
@@ -87,7 +87,10 @@ class FrontendHomeController extends Controller
     public function profile(){
         if(auth()->user()){
 
-            $students=Enrollment::all();
+            $courses=Course::where("user_id",auth()->user()->id)->pluck("id")->toArray();
+            
+            $students=Enrollment::whereIn("course_id",$courses)->get();
+
             $enrollments = Enrollment::where('user_id',auth()->user()->id)->get();
             return view('frontend.pages.profile',compact('enrollments',"students"));
 
@@ -133,4 +136,14 @@ class FrontendHomeController extends Controller
         $content= Course::find($content_id);
         return view ('frontend.pages.content', compact('content'));
     }
+
+    public function cat_course($id){
+
+        $cat = Category::find($id);
+        $courses = Course::where("type",$cat->name)->get();
+
+        // dd($courses);
+        return view ('frontend.pages.cat_course');
+    }
+
 }

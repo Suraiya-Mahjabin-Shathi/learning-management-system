@@ -32,8 +32,10 @@ class FeedbackController extends Controller
         // dd($request->all());
         Feedback::create([
             'user_id'=>auth()->user()->id,
+            // 'name'=> $request->name,
+            // 'email'=> $request->email,
             'course_id'=> $request->course_id,
-            'enrollment_id'=> $enrollment_id,
+            // 'name'=> $request->name,
             'feedback'=>$request->description
         ]);
 

@@ -22,7 +22,10 @@
         <thead>
           <tr>
             <th scope="col">ID</th> 
-            <th scope="col">Instructor ID</th>
+            <th scope="col">From Date</th> 
+            <th scope="col">To Date</th> 
+            <th scope="col">Capacity</th> 
+            <th scope="col">Instructor Name</th>
             <th scope="col">Course Name</th>
             <th scope="col">Course type</th>
             <th scope="col">Image</th>
@@ -36,7 +39,10 @@
             @foreach($courses as $key=>$data)
           <tr>
             <th scope="row"> {{ $key+1}}</th>
-            <td> {{ $data->user_id }} </td>
+            <td> {{ $data->from_date }} </td>
+            <td> {{ $data->to_date }} </td>
+            <td> {{ $data->capacity }} </td>
+            <td> {{ $data->user->name }} </td>
             <td> {{ $data->name }} </td>
             <td> {{ $data->type }} </td>
             <td>

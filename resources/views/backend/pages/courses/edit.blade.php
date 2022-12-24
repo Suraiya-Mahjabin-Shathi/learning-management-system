@@ -22,8 +22,8 @@
 
         <div style="padding: 20px">    
             <div> 
-                <label for="">Enter User ID:</label><br>
-                <input value="{{ $course->user_id}}" type="text" class="form-control" name="user_id" >
+                <label for="">Enter User Name:</label><br>
+                <input value="{{ $course->user->name}}" type="text" class="form-control" name="user_id" >
             </div>
         <div> 
             <label for="">Enter Course name:</label><br>

@@ -30,6 +30,7 @@
            <th scope="col">Email</th>
            <th scope="col">Mobile</th>
            <th scope="col">Date_of_Birth</th>
+           <th scope="col">Gender</th>
            <th scope="col">Action</th>
         </tr>
     </thead>
@@ -47,6 +48,7 @@
             <td>{{$data->email}}</td>
             <td>{{$data->mobile}}</td>
             <td>{{$data->date_of_birth}}</td>
+            <td>{{$data->gender}}</td>
            
             <td>
               <a href="{{route('admin.instructor.view',$data->id)}}" class="btn btn-primary">View</a>

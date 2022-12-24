@@ -25,6 +25,8 @@ Route::post('/login',[FrontendHomeController::class,'login']) ->name('home.login
 Route::post('/registration',[FrontendHomeController::class,'registration']) ->name('home.registration');
 Route::get('/search',[FrontendHomeController::class,'search'])->name('user.search');
 
+Route::get('/cat_course/{id}',[FrontendHomeController::class,'cat_course'])->name('user.cat_course');
+
 Route::get('/content/{content_id}',[FrontendHomeController::class,'content'])->name('home.content');
 
 Route::group(['middleware' => 'auth'], function () {

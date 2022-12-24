@@ -64,12 +64,13 @@ background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 1
                 <thead>
                   <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Learner ID</th>
+                    <th scope="col">Instructor Name</th>
                     <th scope="col">Course ID</th>
                     <th scope="col">Enrollment Date</th>
                     <th scope="col">Amount</th>
                     <th scope="col">Payment Type</th>
                     <th scope="col">Transaction ID</th>
+                    <th scope="col">Status</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
@@ -78,12 +79,13 @@ background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 1
                     
                   <tr>
                     <th scope="row">{{ $key+1 }}</th>
-                    <td>{{ $data->user_id }}</td>
-                    <td>{{ $data->course_id }}</td>
+                    <td>{{ $data->course->user->name}}</td>
+                    <td>{{ $data->course->name }}</td>
                     <td>{{ $data->enrollment_date }}</td>
                     <td>{{ $data->amount }}</td>
                     <td>{{ $data->payment_type }}</td>
                     <td>{{ $data->transaction_id }}</td>
+                    <td>{{ $data->status }}</td>
                     <td>
                       <a href="{{route('feedback.view',$data->id)}}" class="btn btn-primary">View</a>
                     </td>
@@ -100,7 +102,7 @@ background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 1
                   <tr>
                     <th scope="col">SL.</th>
                     {{-- <th scope="col">Name</th> --}}
-                    <th scope="col">Learner ID</th>
+                    {{-- <th scope="col">Learner ID</th> --}}
                     <th scope="col">Learner Name</th>
                     <th scope="col">Course ID</th>
                     <th scope="col">Enrollment Date</th>
@@ -113,8 +115,8 @@ background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 1
                   <tr>
                     <th scope="row">{{ $key+1 }}</th>
                     {{-- <td>{{ $data->name }}</td> --}}
-                    <td>{{ $data->user_id }}</td>
-                    <td>{{ $data->name }}</td>
+                    <td>{{ $data->user->name}}</td>
+                    {{-- <td>{{ $data->name }}</td> --}}
                     <td>{{ $data->course_id }}</td>
                     <td>{{ $data->enrollment_date }}</td>
                     <td>

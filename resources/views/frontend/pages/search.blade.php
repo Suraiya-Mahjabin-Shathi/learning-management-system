@@ -21,7 +21,7 @@
                     <div class="card-body text-center">
                         <h4 class="card-title">{{$course->name}}</h4>
                         <p class="text-muted">{{$course->price}}</p>
-                        <a class="btn btn-outline-primary btn-sm" href=" #" data-abc="true">enroll</a>
+                        <a  href="{{ route('enrollment.form',$course->id) }} " class="btn btn-warning form-control" aria-describedby="myBtn">Enroll Now</a>
                     </div>
                 </div>
             </div>

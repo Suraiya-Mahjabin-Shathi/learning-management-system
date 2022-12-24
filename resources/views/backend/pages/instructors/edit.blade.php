@@ -18,7 +18,7 @@
 
     @csrf
 
-  <div style="padding: 20px">
+  <div style="padding: 0 20px">
 
     <div>
         <label for=" ">Instructor's Name:</label><br>
@@ -44,11 +44,18 @@
         <label for=" ">Date of Birth:</label><br>
         <input value="{{$instructor->date_of_birth}}" type="date" class="form-control" name="date_of_birth">
     </div>
-   
+    <div> 
+        <label for="">Select Gender:</label><br>
+        <select  name="gender" id="gender" class="form-control">
+            <option @if($instructor->gender=='male') selected @endif  value="male"> Male </option> 
+            <option @if($instructor->gender=='female') selected @endif  value="female"> Female </option>
+        </div> 
+        
+        <div>
+       <input type="submit" class="btn btn-success mt-4" value="Update">
+</div>   
+</div>
 
-    <button class="btn btn-success">Update</button>
-  </div>
-  
 </form>
 </div>   
 

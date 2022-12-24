@@ -1,22 +1,20 @@
  <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-    <a href=" " class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+    <a href="{{ route("home") }}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
         <h2 class="m-0 text-primary">OLMS</h2>
     </a>
 
-    <div class="nav-item dropdown">
-        <a href=" " class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Categories</a>
-        <div class="dropdown-menu fade-down m-0">
-            <a href=" " class="dropdown-item">Academic</a>
-            <a href=" " class="dropdown-item">Language Learning Course</a>
-            <a href=" " class="dropdown-item">Development</a>
-            <a href=" " class="dropdown-item">Design & Creative Course</a>
-            <a href=" " class="dropdown-item">Kid's Course</a>
-            <a href=" " class="dropdown-item">Free Course</a>
-        </div>
-    </div> 
 
-    <div class=" col-lg-6 col-6 text-left">
+    <div class="navbar-nav ms-auto p-4 p-lg-0">
+        <a href="#categories"  class="nav-item nav-link">Categories</a>
+    </div>
+
+    <div class="navbar-nav ms-auto p-4 p-lg-0">
+        <a href="#course"  class="nav-item nav-link">Courses</a>
+    </div>
+
+
+    <div class=" col-lg-5 col-5 text-left">
         <form action="{{ route('user.search')}}">
 
             <div class="input-group">
@@ -27,14 +25,15 @@
         </form>
     </div>
 
+
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
           
-            <a href=" " class="nav-item nav-link">About</a>
-            <a href=" " class="nav-item nav-link">Contact</a> 
+            <a href="#about"  class="nav-item nav-link">About</a>
+            <a href="#about " class="nav-item nav-link">Contact</a> 
 
             @auth
-            <a href="{{ route('user.profile') }} " class="nav-item nav-link">{{ auth()->user()->name}}</a>
+            <a href="{{ route('user.profile') }} " class="nav-item nav-link">{{ auth()->user()->name}} {{ auth()->user()->role }}</a>
             <a href="{{ route('home.logout') }}" class="nav-item nav-link">Logout</a>
            
             @else
@@ -46,7 +45,6 @@
                    Login
                 </button>
             @endauth
-
            
         </div>
     </div>
