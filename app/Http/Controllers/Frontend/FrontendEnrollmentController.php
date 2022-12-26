@@ -18,37 +18,48 @@ class FrontendEnrollmentController extends Controller
 
         // course_id
         // user_id
-        // $enroll = Enrollment::where("course_id",$course_id)->where("user_id", auth()->user()->id)->get();
+
+        $enrollCount=Enrollment::where('course_id',$course->id)->count();
+        if($enrollCount < $course->capacity)
+        {
+            $enroll = Enrollment::where("user_id", auth()->user()->id)->where("course_id", $course->id)->first();
         
-        // if($enroll){
-        //     notify()->warning("Already Enrolled");
-        //     return to_route("home");
-        // }
-
-
-        // $request->validate([
+            if($enroll){
+               notify()->warning("Already Enrolled");
+               return to_route("home");
+            }
             
-        //     "enrollment_date"=>"required",
-        //     "payment_date"=>"required",
-        //     "amount"=>"required",
-        //     "payment_type"=>"required",
-        //     "transaction_id"=>"required",
-           
-        // ]);
+   
+           $request->validate([
+               
+               "enrollment_date"=>"required",
+               "payment_date"=>"required",
+               "amount"=>"required",
+               "payment_type"=>"required",
+               "transaction_id"=>"required",
+              
+           ]);
+   
+           Enrollment::create([
+               //database column name=>input field name
+   
+               'user_id'=>auth()->user()->id,
+               'course_id'=>$course->id,
+               'enrollment_date'=> $request->enrollment_date,
+               'payment_date'=> $request->payment_date,
+               'amount'=> $request->amount,
+               'payment_type'=> $request->payment_type,
+               'transaction_id'=> $request->transaction_id,
+               'status'=> $request->status,
+           ]);
 
-        Enrollment::create([
-            //database column name=>input field name
+           notify()->success("Enrolled success");
+           return redirect()->route('home');
 
-            'user_id'=>auth()->user()->id,
-            'course_id'=>$course->id,
-            'enrollment_date'=> $request->enrollment_date,
-            'payment_date'=> $request->payment_date,
-            'amount'=> $request->amount,
-            'payment_type'=> $request->payment_type,
-            'transaction_id'=> $request->transaction_id,
-            'status'=> $request->status,
-        ]);
-        return redirect()->route('home');
+        }
+        notify()->warning("No seat available.");
+    return redirect()->route('home');
+        
     }
 
 

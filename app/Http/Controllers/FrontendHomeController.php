@@ -154,7 +154,7 @@ class FrontendHomeController extends Controller
         $courses = Course::where("type",$cat->name)->get();
 
         // dd($courses);
-        return view ('frontend.pages.cat_course');
+        return view ('frontend.pages.cat_course', compact('courses'));
     }
 
 }

@@ -121,7 +121,8 @@
                         <img src="{{ url('/uploads/',$data->image) }}" class="card-img-top" alt="image">
                         <div class="card-body">
                           <h5 class="card-title">{{ $data->name }}</h5>
-
+                        
+          
                           <a href="{{ route('home.content',$data->id) }} " class="btn btn-info">Content</a>
                          
                         </div>
