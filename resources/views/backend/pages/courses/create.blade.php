@@ -47,10 +47,10 @@
             <label for="">Category Type:</label>
             <select class="form-control" name="type">
             <option value="designing">Designing</option>
-            <option value="technology">Technology</option>
-            <option value="technology">Language</option>
-            <option value="technology">Kid's</option>
-            <option value="technology">Free Course</option>
+            <option value="development">Development</option>
+            <option value="language">Language</option>
+            <option value="kid's">Kid's</option>
+            <option value="academic">Academic</option>
             </select>
         </div>
         <div> 

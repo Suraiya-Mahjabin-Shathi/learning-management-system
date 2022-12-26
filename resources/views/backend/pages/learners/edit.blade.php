@@ -43,15 +43,16 @@
             <label for="">Enter Learner Date of Birth:</label><br>
             <input value="{{ $learner->date_of_birth }}" type="date" name="date_of_birth" class="form-control"  required>
         </div>
-        <div>
-            <button type="submit" class="btn btn-primary">Update</button>
-       </div>
+        
         <div> 
             <label for="">Select Gender:</label><br>
             <select  name="gender" id="gender" class="form-control">
             <option @if($learner->gender=='male') selected @endif  value="male"> Male </option> 
             <option @if($learner->gender=='female') selected @endif  value="female"> Female </option>
         </div>  
+        <div>
+            <input type="submit" class="btn btn-success mt-4" value="Update">
+        </div> 
        
     </div> 
     </form>

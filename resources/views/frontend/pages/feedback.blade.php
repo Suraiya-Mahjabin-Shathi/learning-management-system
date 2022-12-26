@@ -120,8 +120,8 @@ z-index: 0
               <div class="d-flex flex-row mb-4 pb-2">
                 <div class="flex-fill">
 
-                  <h5 class="bold">User ID:{{ $enrollment->user_id }}</h5>
-                  <h5 class="bold">Course ID:{{ $enrollment->course_id }} </h5>
+                  <h5 class="bold">User ID:{{ $enrollment->user->name }}</h5>
+                  <h5 class="bold">Course ID:{{ $enrollment->course->name }} </h5>
                   <h5 class="bold">Amount:{{ $enrollment->amount}}  </h5>
                   <h5 class="bold">Payment date: {{ $enrollment->payment_date }}  </h5>
                   <h5 class="bold">Transaction ID:{{ $enrollment->transaction_id }} </h5>

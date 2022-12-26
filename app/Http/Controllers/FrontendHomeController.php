@@ -109,15 +109,26 @@ class FrontendHomeController extends Controller
     {
        //validation
 
+       $fileName = null;
+       if ($request->hasFile('image')) {
+           $fileName = date('ymdhmi') . '.' . $request->file('image')->getClientOriginalExtension();
+           $request->file('image')->storeAs('/uploads',$fileName);
+       }
+
         $user=User::find($profile_id);
         $user->update([
             'name'=>$request->name,
+            'image' => $fileName,
             'designation'=>$request->designation,
+            'role'=>$request->role,
             'email'=>$request->email,
             'mobile'=>$request->mobile,
-            'address'=>$request->address,
+            'gender'=>$request->gender,
             'password'=>bcrypt($request->password),
-            'role'=>$request->role,
+            'date_of_birth'=>$request->date_of_birth,
+            'address'=>$request->address,
+           
+          
         ]);
 
         notify()->success('User profile updated.');

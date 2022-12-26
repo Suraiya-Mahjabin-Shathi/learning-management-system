@@ -23,12 +23,13 @@ class CourseController extends Controller
     public function store(Request $request)
     {
 
-        // $request->validate([
-        //     "name"=>"required|unique:courses,name",
-        //     "image"=>"required|unique:courses,image",
-        //     // "content"=>"required",
-        //     // "price"=>"required"
-        // ]);
+         $request->validate([
+             "name"=>"required|unique:courses,name",
+             "capacity"=>"required|min:1 max:5"
+        //     "image"=>"required",
+        //      "content"=>"required",
+        //      "price"=>"required"
+         ]);
 
         $fileName = null;
         if ($request->hasFile('image')) 

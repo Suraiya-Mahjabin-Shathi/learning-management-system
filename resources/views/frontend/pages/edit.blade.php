@@ -50,6 +50,10 @@ background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 1
         <input value="{{ auth()->user()->designation }} " type="text" class="form-control" name="designation" placeholder="Enter user designation" >
       </div>
       <div> 
+        <label for="">User Role:</label><br>
+        <input value="{{ auth()->user()->role }} " type="text" class="form-control" name="role" placeholder="Enter user designation" >
+      </div>
+      <div> 
           <label for="">Upload image:</label><br>
           <input value="{{ auth()->user()->image }}" type="file" class="form-control" name="image" placeholder="Upload user image" >
       </div>
@@ -59,8 +63,20 @@ background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 1
       </div> 
       <div>
         <label for="">User Mobile:</label>
-        <input value="{{ auth()->user()->mobile }}" type="text" class="form-control" name="mobile" placeholder="Enter user mobile number" >
+        <input value="{{ auth()->user()->mobile }}" type="numeric" class="form-control" name="mobile" placeholder="Enter user mobile number" >
     </div> 
+    <div>
+      <label for="">User Gender:</label>
+      <input value="{{ auth()->user()->gender }}" type="text" class="form-control" name="gender" placeholder="Enter user gender" >
+    </div>
+    <div>
+      <label for="">User Password:</label>
+      <input value="{{ auth()->user()->password }}" type="password" class="form-control" name="password" placeholder="Enter user password" >
+    </div>
+    <div>
+      <label for="">Date of Birth:</label>
+      <input value="{{ auth()->user()->date_of_birth }}" type="date" class="form-control" name="date_of_birth" placeholder="Enter user date-of-birth" >
+    </div>
     <div>
       <label for="">User Address:</label>
       <input value="{{ auth()->user()->address }}" type="text" class="form-control" name="address" placeholder="Enter user address" >

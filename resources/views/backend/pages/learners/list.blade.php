@@ -49,7 +49,7 @@
           <td>
             <a href="{{route('admin.learner.view',$data->id)}}" class="btn btn-primary">View</a>
             <a href="{{route('admin.learner.edit',$data->id)}}" class="btn btn-success">Edit</a> 
-            <a href="{{route('admin.learner.delete',$data->id)}}" class="btn btn-danger">Delete</a>
+            <a href="{{route('admin.learner.delete',$data->id)}}"> </a>
           </td>          
         </tr>
        @endforeach

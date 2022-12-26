@@ -18,15 +18,16 @@ class FrontendEnrollmentController extends Controller
 
         // course_id
         // user_id
-        $enroll = Enrollment::where("course_id",$course_id)->where("user_id", auth()->user()->id)->get();
+        // $enroll = Enrollment::where("course_id",$course_id)->where("user_id", auth()->user()->id)->get();
         
-        if($enroll){
-            notify()->warning("Already Enrolled");
-            return to_route("home");
-        }
+        // if($enroll){
+        //     notify()->warning("Already Enrolled");
+        //     return to_route("home");
+        // }
+
+
         // $request->validate([
-        //     "user_id"=>"required|",
-        //     "course_id"=>"required",
+            
         //     "enrollment_date"=>"required",
         //     "payment_date"=>"required",
         //     "amount"=>"required",

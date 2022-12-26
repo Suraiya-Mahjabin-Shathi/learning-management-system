@@ -14,7 +14,7 @@
     </div>
 
 
-    <div class=" col-lg-5 col-5 text-left">
+    <div class=" col-lg-4 col-4 text-left">
         <form action="{{ route('user.search')}}">
 
             <div class="input-group">
@@ -33,7 +33,7 @@
             <a href="#about " class="nav-item nav-link">Contact</a> 
 
             @auth
-            <a href="{{ route('user.profile') }} " class="nav-item nav-link">{{ auth()->user()->name}} {{ auth()->user()->role }}</a>
+            <a href="{{ route('user.profile') }} " class="nav-item nav-link">{{ auth()->user()->name}} | {{ auth()->user()->role }}</a>
             <a href="{{ route('home.logout') }}" class="nav-item nav-link">Logout</a>
            
             @else

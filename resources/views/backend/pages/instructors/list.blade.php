@@ -53,7 +53,7 @@
             <td>
               <a href="{{route('admin.instructor.view',$data->id)}}" class="btn btn-primary">View</a>
               <a href="{{route('admin.instructor.edit',$data->id)}}" class="btn btn-success">Edit</a>
-              <a href="{{route('admin.instructor.delete',$data->id)}}" class="btn btn-danger">Delete</a>
+              <a href="{{route('admin.instructor.delete',$data->id)}}"> </a>
   
             </td>          
           </tr>

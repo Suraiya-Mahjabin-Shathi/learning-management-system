@@ -12,6 +12,7 @@ class EnrollmentController extends Controller
     public function list(){
         $cats = Enrollment::all();
 
+        // dd($cats);
         return view('backend.pages.enrollment.list', compact('cats'));
     }
 
@@ -35,6 +36,8 @@ class EnrollmentController extends Controller
         Enrollment::create([
             //database column name=>input field name
 
+           
+
             'user_id'=> $request->user_id,
             'course_id'=> $request->course_id,
             'enrollment_date'=> $request->enrollment_date,
@@ -50,6 +53,7 @@ class EnrollmentController extends Controller
 
     public function acceptEnrollment(Request $request, $enrollment_id)
     {
+          
       $enrollment=Enrollment::find($enrollment_id);
       $enrollment->update([
         'status'=>'accept'

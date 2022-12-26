@@ -33,10 +33,10 @@
             <label for="">Category Type:</label>
             <select class="form-control" name="type">
             <option @if($course->type=='designing') selected @endif value="designing">Designing</option>
-            <option @if($course->type=='technology') selected @endif  value="technology">Technology</option>
+            <option @if($course->type=='development') selected @endif  value="Development">Development</option>
             <option @if($course->type=='language') selected @endif value="language">Language</option>
-            <option @if($course->type=='kids') selected @endif value="technology">Kid's</option>
-            <option @if($course->type=='free course') selected @endif value="technology">Free Course</option>
+            <option @if($course->type=='kids') selected @endif value="kid's">Kid's</option>
+            <option @if($course->type=='academic') selected @endif value="academic">Academic</option>
             </select>
         </div>
         <div> 

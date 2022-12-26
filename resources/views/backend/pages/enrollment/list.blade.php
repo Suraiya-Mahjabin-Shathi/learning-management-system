@@ -22,7 +22,9 @@
     <thead>
       <tr>
         <th scope="col">ID</th>
-        <th scope="col">Learner Name</th>
+        <th scope="col">Learner ID</th>
+        <th scope="col">Learner Name</th> 
+        <th scope="col">Course ID</th>
         <th scope="col">Course Name</th>
         <th scope="col">Enrollment_date</th>
         <th scope="col">Payment_date</th>
@@ -37,7 +39,9 @@
       @foreach($cats as $key=>$data)
       <tr>
         <th scope="row">{{$key+1}}</th>
-        <td> {{$data->user->name}}</td>
+        <td> {{$data->user_id}}</td>
+        <td> {{$data->user->name}}</td> 
+        <td> {{$data->course_id}}</td>
         <td> {{$data->course->name}}</td>
         <td>{{$data->enrollment_date }}</td>
         <td>{{$data->payment_date}}</td>

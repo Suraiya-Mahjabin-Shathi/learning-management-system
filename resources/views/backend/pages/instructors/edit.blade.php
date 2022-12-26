@@ -49,11 +49,10 @@
         <select  name="gender" id="gender" class="form-control">
             <option @if($instructor->gender=='male') selected @endif  value="male"> Male </option> 
             <option @if($instructor->gender=='female') selected @endif  value="female"> Female </option>
-        </div> 
-        
-        <div>
-       <input type="submit" class="btn btn-success mt-4" value="Update">
-</div>   
+    </div> 
+    <div>
+        <input type="submit" class="btn btn-success mt-4" value="Update">
+    </div>   
 </div>
 
 </form>
